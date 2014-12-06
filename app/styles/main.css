@@ -1,5 +1,29 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\000031}}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\000037}}
+a {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000312}}
+a:hover {
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000318}}
+button:active, button:focus, a:active, a:focus {
+  outline: none;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_common\.scss}line{font-family:\000031}}
-body, .main, .content {
+body, .main, .content, .screen {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -10,62 +34,56 @@ body, .main, .content {
   box-orient: vertical;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_common\.scss}line{font-family:\0000311}}
+.menu ul, .filter ul {
+  width: 150px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  -webkit-box-shadow: -1px 1px 4px -1px #ccc;
+  box-shadow: -1px 1px 4px -1px #ccc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_common\.scss}line{font-family:\0000318}}
+.menu ul li:not(:last-child), .filter ul li:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_common\.scss}line{font-family:\0000321}}
+.menu ul li a, .filter ul li a {
+  display: block;
+  padding: 11px 10px;
+  background-color: #fcfcfc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_common\.scss}line{font-family:\0000325}}
+.menu ul li a.active, .filter ul li a.active, .menu ul li a:active, .filter ul li a:active {
+  background-color: #f3f3f3;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_common\.scss}line{font-family:\0000334}}
+.screen.loading:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5) url('data:image/gif;base64,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') no-repeat center center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\000036}}
 html, body {
   -webkit-overflow-scrolling: touch;
   overflow-x: none;
   height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000312}}
 body {
   background-color: #ccc;
   color: #555;
-  font-size: 16px;
+  font-size: 18px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000318}}
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000324}}
-a {
-  display: inline-block;
-  vertical-align: middle;
-  text-decoration: none;
-  color: #555;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000329}}
-a:hover {
-  text-decoration: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000335}}
-button:active, button:focus, a:active, a:focus {
-  outline: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000340}}
-.main {
-  width: 320px;
-  margin: 0 auto;
-  background-color: #fff;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000348}}
-.content {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-}
-
-/* Global Error style
+/* Global and regular error style
 ------------------------------------------ */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_error\.scss}line{font-family:\000034}}
 .global-error {
@@ -106,4 +124,351 @@ button:active, button:focus, a:active, a:focus {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_error\.scss}line{font-family:\0000337}}
 .global-error .close:active {
   background-color: #ff7a44;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_error\.scss}line{font-family:\0000343}}
+.error {
+  background-color: #ff9e77;
+  padding: 10px;
+  margin: 5px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_error\.scss}line{font-family:\0000347}}
+.error.center {
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\000031}}
+.form {
+  padding: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\000033}}
+.form.center {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\000035}}
+.form.center .input {
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000311}}
+.form-row {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000314}}
+.form-row.form-row-error .input {
+  border-color: #8d0000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000319}}
+.form-row .input {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000324}}
+.input {
+  border: 1px solid #ddd;
+  padding: 14px 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: border-color linear 0.3s;
+  transition: border-color linear 0.3s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000330}}
+.input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\000031}}
+.btn {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  padding: 9px 18px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000310}}
+.btn:disabled {
+  opacity: 0.7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000314}}
+.btn.big {
+  padding: 15px 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000318}}
+.btn.block {
+  width: 100%;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000324}}
+.btn.white {
+  background-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000328}}
+.btn.green {
+  color: #fff;
+  background-color: #005826;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000333}}
+.btn.brown {
+  color: #fff;
+  background-color: #730000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000323}}
+.main {
+  width: 320px;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000332}}
+.content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000337}}
+.logo {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 70px 0 40px;
+  color: #003f1b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000344}}
+.logo span, .logo i {
+  display: inline-block;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000350}}
+.logo span:first-of-type {
+  margin-right: -2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000355}}
+.logo .q {
+  width: 80px;
+  height: 100px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGQkVCQzcwNDc0MzcxMUU0QkU5MkJCNDVFNTcyMTZFNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGQkVCQzcwNTc0MzcxMUU0QkU5MkJCNDVFNTcyMTZFNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZCRUJDNzAyNzQzNzExRTRCRTkyQkI0NUU1NzIxNkU2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZCRUJDNzAzNzQzNzExRTRCRTkyQkI0NUU1NzIxNkU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+MdqmJgAAKgBJREFUeNrsnQm4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');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  -webkit-background-size: 100px 100px;
+  background-size: 100px 100px;
+}
+
+/* Screen */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000366}}
+.screen {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  max-width: 320px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000379}}
+.screen > .toolbar {
+  -webkit-box-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000383}}
+.screen > .list {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  overflow-y: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000390}}
+.screen.quests .toolbar > .status-text {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+/* Screen header */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\0000398}}
+.header {
+  -webkit-box-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  background-color: #005826;
+  height: 50px;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003104}}
+.header h1 {
+  color: #fff;
+  line-height: 50px;
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0 60px 0 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* Header menu */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003118}}
+.menu {
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003124}}
+.menu .menu-toggle {
+  display: block;
+  color: #fff;
+  font-size: 30px;
+  padding: 7px 0;
+  width: 50px;
+  border-left: 1px solid #ddd;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003135}}
+.menu.open .menu-toggle {
+  background-color: #008b3c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003138}}
+.menu.open ul {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003143}}
+.menu ul {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+/* Toolbar on top */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003153}}
+.toolbar {
+  border-bottom: 1px solid #ddd;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Filter for quests */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003159}}
+.filter {
+  position: relative;
+  display: inline-block;
+  margin-left: -5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003165}}
+.filter.open ul {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003169}}
+.filter ul {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 45px;
+  right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003177}}
+.filter ul .status-text {
+  padding: 0;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003180}}
+.filter ul .status-text .status {
+  float: right;
+}
+
+/* Quest status as indicator and as text */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003188}}
+.status-text {
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003194}}
+.status {
+  display: inline-block;
+  padding: 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003198}}
+.status.running {
+  color: #6aff23;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003201}}
+.status.pending {
+  color: #ffe14a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003204}}
+.status.finished {
+  color: #ff0000;
+}
+
+/* General list */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003211}}
+.list li {
+  border-bottom: 1px solid #ddd;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003213}}
+.list li a {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003215}}
+.list li a .title {
+  padding: 10px;
+  margin-right: 40px;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003220}}
+.list li a .fa {
+  width: 40px;
+  text-align: center;
+  float: right;
+  padding: 10px 0;
+}
+
+/* Main content extended to support simple opacity animation */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003232}}
+.content-animate.ng-enter, .content-animate.ng-leave {
+  -webkit-transition: opacity linear 0.3s;
+  transition: opacity linear 0.3s;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003248}}
+.content-animate.ng-enter {
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003250}}
+.content-animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003255}}
+.content-animate.ng-leave {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003257}}
+.content-animate.ng-leave.ng-leave-active {
+  opacity: 0;
 }

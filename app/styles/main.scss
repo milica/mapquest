@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+@import 'overrides';
 @import 'common';
 
 html, body {
@@ -11,36 +12,19 @@ html, body {
 body {
   background-color: #ccc;
   color: #555;
-  font-size: 16px;
+  font-size: 18px;
   @extend %flex-column;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  display: inline-block;
-  vertical-align: middle;
-  text-decoration: none;
-  color: #555;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-button, a {
-  &:active, &:focus {
-    outline: none;
-  }
-}
+@import 'error';
+@import 'form';
+@import 'button';
 
 .main {
   width: 320px;
   margin: 0 auto;
   background-color: #fff;
+  position: relative;
   @include flex(1);
   @extend %flex-column;
 }
@@ -50,4 +34,230 @@ button, a {
   @extend %flex-column;
 }
 
-@import 'error';
+.logo {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 70px 0 40px;
+  color: darken($green, 5%);
+
+  span, i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span {
+    &:first-of-type {
+      margin-right: -2px;
+    }
+  }
+
+  .q {
+    width: 80px;
+    height: 100px;
+    background-image: inline-image('logo.png');
+    background-repeat: no-repeat;
+    background-position: center 0;
+    @include background-size(100px 100px);
+  }
+}
+
+/* Screen */
+.screen {
+  @include flex(1);
+  @extend %flex-column;
+  max-width: 320px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+  position: relative;
+
+  &.loading {
+    @extend %loading;
+  }
+
+  & > .toolbar {
+    @include flex(0 0 auto);
+  }
+
+  & > .list {
+    @include flex(1);
+    overflow-y: auto;
+  }
+
+  &.quests {
+    .toolbar {
+      & > .status-text {
+        @include flex(1);
+      }
+    }
+  }
+}
+
+/* Screen header */
+.header {
+  @include flex(0 0 auto);
+  background-color: $green;
+  height: $header;
+  position: relative;
+
+  h1 {
+    color: #fff;
+    line-height: $header;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 60px 0 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+/* Header menu */
+.menu {
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  right: 0;
+
+  .menu-toggle {
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    padding: 7px 0;
+    width: 50px;
+    border-left: 1px solid #ddd;
+    text-align: center;
+  }
+
+  &.open {
+    .menu-toggle {
+      background-color: lighten($green, 10%);
+    }
+    ul {
+      display: block;
+    }
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    @extend %menu;
+  }
+}
+
+/* Toolbar on top */
+.toolbar {
+  border-bottom: 1px solid #ddd;
+  @include flex-box();
+}
+
+/* Filter for quests */
+.filter {
+  position: relative;
+  display: inline-block;
+  margin-left: -5px;
+
+  &.open {
+    ul {
+      display: block;
+    }
+  }
+  ul {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 45px;
+    right: 0;
+    @extend %menu;
+
+    .status-text {
+      padding: 0;
+      display: block;
+      .status {
+        float: right;
+      }
+    }
+  }
+}
+
+/* Quest status as indicator and as text */
+.status-text {
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.status {
+  display: inline-block;
+  padding: 0 5px;
+
+  &.running {
+    color: #6aff23;
+  }
+  &.pending {
+    color: #ffe14a;
+  }
+  &.finished {
+    color: #ff0000;
+  }
+}
+
+/* General list */
+.list {
+  li {
+    border-bottom: 1px solid #ddd;
+    a {
+      display: block;
+      .title {
+        padding: 10px;
+        margin-right: 40px;
+        display: block;
+      }
+      .fa {
+        width: 40px;
+        text-align: center;
+        float: right;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+/* Main content extended to support simple opacity animation */
+.content-animate {
+  &.ng-enter,
+  &.ng-leave {
+    @include transition(opacity linear 0.3s);
+    opacity: 1;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+
+  &.ng-leave {
+    opacity: 1;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+

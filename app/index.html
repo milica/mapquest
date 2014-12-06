@@ -18,8 +18,8 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="main view-animate-container">
-        <div class="view-animate content" ng-view=""></div>
+    <div class="main">
+        <div class="content content-animate" ng-view=""></div>
     </div>
 
     <error></error>
@@ -38,17 +38,24 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/template.js"></script>
-        <script src="scripts/controllers/MainCtrl.js"></script>
+
+        <script src="scripts/controllers/LoginCtrl.js"></script>
+        <script src="scripts/controllers/QuestsCtrl.js"></script>
 
         <script src="scripts/services/Api.js"></script>
         <script src="scripts/services/HTTPInterceptor.js"></script>
 
         <script src="scripts/directives/error.js"></script>
+        <script src="scripts/directives/header.js"></script>
+
+        <script src="scripts/models/User.js"></script>
+        <script src="scripts/models/Quest.js"></script>
         <!-- endbuild -->
 </body>
 </html>

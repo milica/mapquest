@@ -1,4 +1,4 @@
-/* Global Error style
+/* Global and regular error style
 ------------------------------------------ */
 
 .global-error {
@@ -37,5 +37,14 @@
     &:active {
       background-color: darken($error, 10%);
     }
+  }
+}
+
+.error {
+  background-color: $error;
+  padding: 10px;
+  margin: 5px 10px;
+  &.center {
+    text-align: center;
   }
 }

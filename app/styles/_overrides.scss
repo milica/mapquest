@@ -1,0 +1,21 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #555;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button, a {
+  &:active, &:focus {
+    outline: none;
+  }
+}

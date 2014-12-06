@@ -1,0 +1,29 @@
+<header title="Quests"></header>
+
+<div class="screen quests" ng-class="{loading: view.loading}">
+
+    <div class="toolbar">
+        <span class="status-text">{{ view.status }} <span class="status {{ view.status }}"><i class="fa fa-circle"></i></span></span>
+        <div class="actions">
+            <a ng-href="#/new-quest" class="btn"><i class="fa fa-plus"></i></a>
+            <div class="filter" ng-class="{open: view.filterOpen}">
+                <a href class="btn filter-toggle" ng-click="toggleFilter()"><i class="fa fa-ellipsis-h"></i></a>
+                <ul>
+                    <li><a href ng-click="filter('running')"><span class="status-text">running <span class="status running"><i class="fa fa-circle"></i></span></span></a></li>
+                    <li><a href ng-click="filter('pending')"><span class="status-text">pending <span class="status pending"><i class="fa fa-circle"></i></span></span></a></li>
+                    <li><a href ng-click="filter('finished')"><span class="status-text">finished <span class="status finished"><i class="fa fa-circle"></i></span></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list">
+        <li ng-repeat="quest in view.quests">
+            <a ng-href="#/quest/{{ quest.id }}">
+                <i class="fa fa-chevron-right"></i>
+                <span class="title">{{ quest.name }}</span>
+            </a>
+        </li>
+    </ul>
+
+</div>

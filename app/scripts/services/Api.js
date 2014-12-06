@@ -6,7 +6,12 @@ angular.module('mapQuestApp')
         var self = {};
         var apiUrl = '/api';
 
+        self.login = $resource(apiUrl + '/login', {}, {
+            post: {method: 'POST'}
+        });
+
         self.maps = $resource(apiUrl + '/maps', {id: '@id'});
+        self.quests = $resource(apiUrl + '/quests', {id: '@id'});
 
 
         return self;
