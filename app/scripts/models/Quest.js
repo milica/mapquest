@@ -41,8 +41,9 @@ angular.module('mapQuestApp')
          *
          * @returns {*}
          */
-        self.create = function() {
+        self.create = function(quest) {
 
+            console.log(quest);
             var deferred = $q.defer();
 
             deferred.resolve();

@@ -19,6 +19,7 @@
         <div class="form-row" ng-class="{'form-row-error': view.form.startDate.$invalid && view.form.$dirty}">
             <input type="text"
                    class="input"
+                   name="startDate"
                    placeholder="Start Date"
                    ng-focus="openDatepicker('start')"
                    ng-model="view.quest.startDate"
@@ -31,6 +32,7 @@
         <div class="form-row" ng-class="{'form-row-error': view.form.finishDate.$invalid && view.form.$dirty}">
             <input type="text"
                    class="input"
+                   name="finishDate"
                    placeholder="Finish Date"
                    ng-focus="openDatepicker('finish')"
                    ng-model="view.quest.finishDate"
