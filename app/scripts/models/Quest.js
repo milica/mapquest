@@ -36,6 +36,23 @@ angular.module('mapQuestApp')
 
         };
 
+        /**
+         * Create new quest
+         *
+         * @returns {*}
+         */
+        self.create = function() {
+
+            var deferred = $q.defer();
+
+            deferred.resolve();
+
+            return deferred.promise;
+
+            //return Api.quests.create().$promise;
+
+        };
+
         return self;
 
     }]);

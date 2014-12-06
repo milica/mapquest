@@ -1,0 +1,49 @@
+<header title="New Quest"></header>
+
+<div class="screen new-quest">
+
+    <p ng-if="view.error" class="error center">{{ view.error }}</p>
+
+    <form class="form" name="view.form" ng-submit="create()" novalidate>
+
+        <div class="form-row" ng-class="{'form-row-error': view.form.name.$invalid && view.form.$dirty}">
+            <input type="text" class="input" placeholder="Name" ng-model="view.quest.name" name="name" required />
+        </div>
+
+        <div class="form-row" ng-class="{'form-row-error': view.form.map.$invalid && view.form.$dirty}">
+            <select class="input" placeholder="Map" ng-model="view.quest.map" name="map" ng-options="map.name for map in view.maps" required>
+                <option value>-- choose --</option>
+            </select>
+        </div>
+
+        <div class="form-row" ng-class="{'form-row-error': view.form.startDate.$invalid && view.form.$dirty}">
+            <input type="text"
+                   class="input"
+                   placeholder="Start Date"
+                   ng-focus="openDatepicker('start')"
+                   ng-model="view.quest.startDate"
+                   datepicker-popup
+                   is-open="view.datepicker.start"
+                   max-date="view.finishDate"
+                   required />
+        </div>
+
+        <div class="form-row" ng-class="{'form-row-error': view.form.finishDate.$invalid && view.form.$dirty}">
+            <input type="text"
+                   class="input"
+                   placeholder="Finish Date"
+                   ng-focus="openDatepicker('finish')"
+                   ng-model="view.quest.finishDate"
+                   datepicker-popup
+                   is-open="view.datepicker.finish"
+                   min-date="view.quest.startDate"
+                   required />
+        </div>
+
+        <div class="form-row">
+            <button type="submit" class="btn green block big">Create</button>
+        </div>
+
+    </form>
+
+</div>

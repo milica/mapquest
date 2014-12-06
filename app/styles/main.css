@@ -22,6 +22,73 @@ button:active, button:focus, a:active, a:focus {
   outline: none;
 }
 
+/* Bootstrap's datepicker style override */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000324}}
+.dropdown-menu {
+  position: fixed;
+  width: 305px;
+  height: 270px;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000334}}
+.dropdown-menu:focus {
+  outline: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000338}}
+.dropdown-menu .btn {
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000342}}
+.dropdown-menu table {
+  background-color: #005826;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000346}}
+.dropdown-menu table:focus {
+  outline: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000351}}
+.dropdown-menu table thead tr {
+  background-color: #005826;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000353}}
+.dropdown-menu table thead tr th {
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 0;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000358}}
+.dropdown-menu table thead tr th .btn {
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000367}}
+.dropdown-menu table tbody tr td {
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000369}}
+.dropdown-menu table tbody tr td .btn {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000372}}
+.dropdown-menu table tbody tr td .btn.active, .dropdown-menu table tbody tr td .btn:hover {
+  color: #fff;
+  background-color: #005826;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000378}}
+.dropdown-menu table tbody tr td .btn span.text-muted {
+  opacity: 0.7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000383}}
+.dropdown-menu table tbody tr td .btn:disabled span {
+  opacity: 0.4;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_common\.scss}line{font-family:\000031}}
 body, .main, .content, .screen {
   display: -webkit-box;
@@ -167,12 +234,13 @@ body {
 .input {
   border: 1px solid #ddd;
   padding: 14px 10px;
+  height: 50px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: border-color linear 0.3s;
   transition: border-color linear 0.3s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000331}}
 .input:focus {
   outline: none;
   border: 1px solid #ccc;
@@ -209,11 +277,12 @@ body {
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000328}}
-.btn.green {
+.btn.green, .dropdown-menu table thead tr th .btn {
   color: #fff;
   background-color: #005826;
+  border-color: #004e22;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_button\.scss}line{font-family:\0000334}}
 .btn.brown {
   color: #fff;
   background-color: #730000;

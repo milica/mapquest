@@ -28,6 +28,7 @@
   &.green {
     color: #fff;
     background-color: $green;
+    border-color: darken($green, 2%);
   }
 
   &.brown {

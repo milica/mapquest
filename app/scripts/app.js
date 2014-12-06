@@ -1,8 +1,8 @@
 'use strict';
 
 angular
-    .module('mapQuestApp', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'LocalStorageModule'])
-    .config(['$routeProvider', '$httpProvider', 'localStorageServiceProvider', function ($routeProvider, $httpProvider, localStorageServiceProvider) {
+    .module('mapQuestApp', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'LocalStorageModule', 'ui.bootstrap'])
+    .config(['$routeProvider', '$httpProvider', 'localStorageServiceProvider', 'datepickerPopupConfig', 'datepickerConfig', function ($routeProvider, $httpProvider, localStorageServiceProvider, datepickerPopupConfig, datepickerConfig) {
         $routeProvider
             .when('/login', {
                 templateUrl: 'views/login.html',
@@ -12,6 +12,10 @@ angular
                 templateUrl: 'views/quests.html',
                 controller: 'QuestsCtrl'
             })
+            .when('/new-quest', {
+                templateUrl: 'views/new-quest.html',
+                controller: 'NewQuestCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -19,6 +23,14 @@ angular
         $httpProvider.interceptors.push('HTTPInterceptor');
 
         localStorageServiceProvider.setPrefix('mapQuest');
+
+        datepickerConfig.minDate = new Date();
+        datepickerConfig.showWeeks = false;
+
+        datepickerPopupConfig.appendToBody = true;
+        datepickerPopupConfig.showButtonBar = false;
+        datepickerPopupConfig.datepickerPopup = 'yyyy/MM/dd';
+
     }])
     .run(['$rootScope', '$location', 'User', function($rootScope, $location, User) {
 

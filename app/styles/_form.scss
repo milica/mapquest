@@ -24,6 +24,7 @@
 .input {
   border: 1px solid #ddd;
   padding: 14px 10px;
+  height: 50px;
   @include box-sizing(border-box);
   @include transition(border-color linear 0.3s);
 

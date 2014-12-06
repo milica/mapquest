@@ -11,7 +11,10 @@ angular.module('mapQuestApp')
         });
 
         self.maps = $resource(apiUrl + '/maps', {id: '@id'});
-        self.quests = $resource(apiUrl + '/quests', {id: '@id'});
+
+        self.quests = $resource(apiUrl + '/quests', {id: '@id'}, {
+            create: {method: 'POST'}
+        });
 
 
         return self;
