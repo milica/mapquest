@@ -1,0 +1,120 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($arguments...) {
+  -webkit-box-shadow: $arguments;
+  box-shadow: $arguments;
+}
+
+@mixin box-sizing($arguments) {
+  -webkit-box-sizing: $arguments;
+  box-sizing: $arguments;
+}
+
+@mixin background-clip($arguments) {
+  -webkit-background-clip: $arguments;
+  background-clip: $arguments;
+}
+
+@mixin transition($arguments...) {
+  -webkit-transition: $arguments;
+  transition: $arguments;
+}
+
+@mixin transition-delay($value) {
+  -webkit-transition-delay: $value;
+  transition-delay: $value;
+}
+
+@mixin transform($arguments...) {
+  -webkit-transform: $arguments;
+  transform: $arguments;
+}
+
+@mixin animation($arguments) {
+  -webkit-animation: $arguments;
+  animation: $arguments;
+}
+
+@mixin animation-delay($sec) {
+  -webkit-animation-delay: $sec;
+  animation-delay: $sec;
+}
+
+@mixin animation-duration($sec) {
+  -webkit-animation-duration: $sec;
+  animation-duration: $sec;
+}
+
+@mixin animation-name($name) {
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+
+@mixin background-size($arguments...) {
+  -webkit-background-size: $arguments;
+  background-size: $arguments;
+}
+
+@mixin placeholder($color) {
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin user-select($value) {
+  -webkit-user-select: $value;
+  user-select: $value;
+}
+
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+  appearance: $value;
+}
+
+@mixin keyframe($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin flex-box() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-flow($value) {
+  flex-flow: $value;
+  -webkit-flex-flow: $value;
+}
+
+@mixin flex-direction($value) {
+  flex-direction: $value;
+  -webkit-flex-direction: $value;
+  -webkit-box-direction: 'normal';
+  @if $value == 'row' {
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+  } @else {
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+  }
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -webkit-flex:  $values;
+  flex:  $values;
+}
+
+@mixin flex-order($val) {
+  -webkit-box-ordinal-group: $val;
+  -webkit-order: $val;
+  order: $val;
+}
