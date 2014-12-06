@@ -18,7 +18,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="main">
+    <div class="main" ng-controller="MasterCtrl">
         <div class="content content-animate" ng-view=""></div>
     </div>
 
@@ -46,15 +46,18 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/template.js"></script>
 
+        <script src="scripts/controllers/MasterCtrl.js"></script>
         <script src="scripts/controllers/LoginCtrl.js"></script>
         <script src="scripts/controllers/QuestsCtrl.js"></script>
         <script src="scripts/controllers/NewQuestCtrl.js"></script>
+        <script src="scripts/controllers/QuestCtrl.js"></script>
 
         <script src="scripts/services/Api.js"></script>
         <script src="scripts/services/HTTPInterceptor.js"></script>
 
         <script src="scripts/directives/error.js"></script>
         <script src="scripts/directives/header.js"></script>
+        <script src="scripts/directives/modal.js"></script>
 
         <script src="scripts/models/User.js"></script>
         <script src="scripts/models/Quest.js"></script>

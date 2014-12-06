@@ -19,6 +19,7 @@ body {
 @import 'error';
 @import 'form';
 @import 'button';
+@import 'modal';
 
 .main {
   width: 320px;
@@ -80,9 +81,18 @@ body {
     @include flex(0 0 auto);
   }
 
-  & > .list {
+  & > .list,
+  & > .tab {
     @include flex(1);
     overflow-y: auto;
+  }
+
+  & > .tab {
+    position: relative;
+    @extend %flex-column;
+    & > .map {
+      @include flex(1);
+    }
   }
 
   &.quests {
@@ -153,6 +163,15 @@ body {
 .toolbar {
   border-bottom: 1px solid #ddd;
   @include flex-box();
+
+  &.tabs {
+    a {
+      text-align: center;
+      &.active {
+        background-color: #fff;
+      }
+    }
+  }
 }
 
 /* Filter for quests */
@@ -257,6 +276,68 @@ body {
     &.ng-leave-active {
       opacity: 0;
     }
+  }
+}
+
+.info-row {
+  @extend %flex-row;
+  border-bottom: 1px solid #eee;
+
+  .label,
+  .info {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .label {
+    @include flex(1);
+    padding: 10px;
+    border-right: 1px solid #eee;
+  }
+  .info {
+    @include flex(2);
+    h2 {
+      padding: 11px 10px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+}
+
+.score {
+  display: block;
+  padding: 10px;
+}
+
+.rank {
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+}
+
+.date {
+  padding: 10px;
+  display: block;
+}
+
+.action {
+  .btn.block {
+    font-size: 20px;
+    padding: 20px;
+    margin: 10px auto;
+    width: 90%;
+  }
+}
+
+.map-actions {
+  @extend %flex-row;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .btn {
+    text-transform: lowercase;
   }
 }
 

@@ -16,6 +16,10 @@ angular
                 templateUrl: 'views/new-quest.html',
                 controller: 'NewQuestCtrl'
             })
+            .when('/quest/:id', {
+                templateUrl: 'views/quest.html',
+                controller: 'QuestCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

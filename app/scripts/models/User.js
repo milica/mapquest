@@ -63,6 +63,85 @@ angular.module('mapQuestApp')
 
         };
 
+        self.getParticipant = function(questId) {
+
+            var userId = self.getSessionUser();
+
+            var deferred = $q.defer();
+
+            var participant = {
+                score: 1,
+                rank: 10,
+                path: [
+                    {
+                        id_area: 1,
+                        status: 1
+                    },
+                    {
+                        id_area: 2,
+                        status: 1
+                    },
+                    {
+                        id_area: 3,
+                        status: 1
+                    }
+                ]
+            };
+
+            deferred.resolve({data: participant});
+
+            return deferred.promise;
+
+            //return Api.participants.get({quest_id: questId, user_id: userId}).$promise;
+
+        };
+
+        self.join = function(questId) {
+
+            var userId = self.getSessionUser();
+
+            var deferred = $q.defer();
+
+            var participant = {
+                score: 1,
+                rank: 10,
+                path: [
+                    {
+                        id_area: 1,
+                        status: 1
+                    },
+                    {
+                        id_area: 2,
+                        status: 1
+                    },
+                    {
+                        id_area: 3,
+                        status: 1
+                    }
+                ]
+            };
+
+            deferred.resolve({data: participant});
+
+            return deferred.promise;
+
+            //return Api.participants.create({quest_id: questId, user_id: userId}).$promise;
+
+        };
+
+        self.quit = function(questId) {
+
+            var userId = self.getSessionUser();
+            var deferred = $q.defer();
+
+            deferred.resolve({data: 'removed'});
+
+            return deferred.promise;
+
+            //return Api.participants.remove({quest_id: questId, user_id: userId}).$promise;
+
+        };
+
         return self;
 
     }]);
