@@ -1,0 +1,11 @@
+<div class="global-error" ng-class="{show: errors.length > 0}">
+
+    <button type="button" class="close" ng-click="closeErrors()">
+        <span>&times;</span>
+    </button>
+
+    <div ng-repeat="error in errors">
+        <p>{{ error.message }}</p>
+    </div>
+
+</div>

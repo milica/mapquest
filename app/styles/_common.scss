@@ -1,0 +1,9 @@
+%flex-column {
+  @include flex-box();
+  @include flex-direction(column);
+}
+
+%flex-row {
+  @include flex-box();
+  @include flex-direction(row);
+}

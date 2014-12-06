@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('mapQuestApp')
-    .controller('MainCtrl', [function ($scope) {
+    .controller('MainCtrl', ['$scope', function ($scope) {
+
+        $scope.view = {};
 
     }]);

@@ -1,8 +1,6 @@
+@import 'variables';
 @import 'mixins';
-
-$header: 50px;
-$green: #005826;
-$brown: #730000;
+@import 'common';
 
 html, body {
   -webkit-overflow-scrolling: touch;
@@ -15,16 +13,6 @@ body {
   color: #555;
   font-size: 16px;
   @extend %flex-column;
-}
-
-%flex-column {
-  @include flex-box();
-  @include flex-direction(column);
-}
-
-%flex-row {
-  @include flex-box();
-  @include flex-direction(row);
 }
 
 ul {
@@ -61,3 +49,5 @@ button, a {
   @include flex(1);
   @extend %flex-column;
 }
+
+@import 'error';

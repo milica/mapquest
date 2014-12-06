@@ -2,7 +2,7 @@
 
 angular
     .module('mapQuestApp', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch'])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -11,4 +11,6 @@ angular
             .otherwise({
                 redirectTo: '/'
             });
-    });
+
+        $httpProvider.interceptors.push('HTTPInterceptor');
+    }]);

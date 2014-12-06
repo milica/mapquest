@@ -22,6 +22,7 @@
         <div class="view-animate content" ng-view=""></div>
     </div>
 
+    <error></error>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -41,7 +42,13 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/template.js"></script>
         <script src="scripts/controllers/MainCtrl.js"></script>
+
+        <script src="scripts/services/Api.js"></script>
+        <script src="scripts/services/HTTPInterceptor.js"></script>
+
+        <script src="scripts/directives/error.js"></script>
         <!-- endbuild -->
 </body>
 </html>
