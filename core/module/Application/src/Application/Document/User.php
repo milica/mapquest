@@ -27,9 +27,6 @@ class User {
     /** @ODM\Field(type="string") */
     private $role = 'USER';
 
-
-
-
     protected $config;
 
     public function __construct() {
