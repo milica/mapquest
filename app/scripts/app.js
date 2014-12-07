@@ -36,6 +36,10 @@ angular
                 templateUrl: 'views/map.html',
                 controller: 'MapCtrl'
             })
+            .when('/participants/:quest', {
+                templateUrl: 'views/participants.html',
+                controller: 'ParticipantsCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
