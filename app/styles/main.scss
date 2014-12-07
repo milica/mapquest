@@ -4,7 +4,7 @@
 @import 'common';
 
 html, body {
-  -webkit-overflow-scrolling: touch;
+  //-webkit-overflow-scrolling: touch;
   overflow-x: none;
   height: 100%;
 }
@@ -67,6 +67,7 @@ body {
 .screen {
   @include flex(1);
   @extend %flex-column;
+  @extend %touch-scroll;
   max-width: 320px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -85,6 +86,7 @@ body {
   & > .tab {
     @include flex(1);
     overflow-y: auto;
+    @extend %touch-scroll;
   }
 
   & > .tab {
@@ -112,6 +114,7 @@ body {
     & > .list {
       @include flex(1);
       overflow-y: auto;
+      @extend %touch-scroll;
     }
 
   }
@@ -126,6 +129,7 @@ body {
 
         & > .status-text {
           @include flex(1);
+          min-width: 100px;
         }
         & > .actions {
           @include flex(0 0 auto);
