@@ -247,12 +247,16 @@ body {
   border: 1px solid #ddd;
   padding: 14px 10px;
   height: 50px;
+  -webkit-user-modify: read-write-plaintext-only;
+  -webkit-tap-highlight-color: transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   -webkit-transition: border-color linear 0.3s;
   transition: border-color linear 0.3s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_form\.scss}line{font-family:\0000334}}
 .input:focus {
   outline: none;
   border: 1px solid #ccc;

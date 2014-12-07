@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mapQuestApp')
-    .controller('NewQuestCtrl', ['$scope', '$location', 'Map', 'Quest', function ($scope, $location, Map, Quest) {
+    .controller('NewQuestCtrl', ['$scope', '$location', '$filter', 'Map', 'Quest', function ($scope, $location, $filter, Map, Quest) {
 
         $scope.view = {};
 
@@ -48,7 +48,13 @@ angular.module('mapQuestApp')
 
             $scope.view.loading = true;
 
-            Quest.create($scope.view.form)
+            var quest = {};
+            quest.name = $scope.view.quest.name;
+            quest.startDate = $filter('date')($scope.view.quest.startDate, 'yyyy-MM-dd');
+            quest.finishDate = $filter('date')($scope.view.quest.finishDate, 'yyyy-MM-dd');
+            quest.id_map = $scope.view.quest.map.id;
+
+            Quest.create(quest)
                 .then(function() {
 
                     $location.path('/');

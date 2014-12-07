@@ -25,7 +25,8 @@
                    ng-model="view.quest.startDate"
                    datepicker-popup
                    is-open="view.datepicker.start"
-                   max-date="view.finishDate"
+                   max-date="view.quest.finishDate"
+                   readonly
                    required />
         </div>
 
@@ -39,6 +40,7 @@
                    datepicker-popup
                    is-open="view.datepicker.finish"
                    min-date="view.quest.startDate"
+                   readonly
                    required />
         </div>
 
