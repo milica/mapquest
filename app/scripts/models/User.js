@@ -39,26 +39,26 @@ angular.module('mapQuestApp')
             var user = {
                 username: username,
                 password: password,
-                id: 1
+                //id: 1
             };
 
-            self.setSessionUser(user);
-            deferred.resolve();
+//            self.setSessionUser(user);
+//            deferred.resolve();
 
-//            Api.login.post({}, {username: username, password: password}).$promise
-//                .then(function(result) {
-//
-//                    console.log(result);
-//                    user.id = result.id;
-//
-//                    self.setSessionUser(user);
-//
-//                    deferred.resolve(user);
-//
-//                }, function(error) {
-//                    console.log(error);
-//                    deferred.reject(error.message);
-//                });
+            Api.login.post({}, {username: username, password: password}).$promise
+                .then(function(result) {
+
+                    console.log(result);
+                    user.id = result.id;
+
+                    self.setSessionUser(user);
+
+                    deferred.resolve(user);
+
+                }, function(error) {
+                    console.log(error);
+                    deferred.reject(error.message);
+                });
 
             return deferred.promise;
 
