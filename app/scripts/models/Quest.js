@@ -25,8 +25,7 @@ angular.module('mapQuestApp')
                     name: 'Quest ' + i,
                     status: statuses[status],
                     startDate: '2014-10-11',
-                    finishDate: '2014-12-11',
-                    map: _.random(0, 9)
+                    finishDate: '2014-12-11'
                 });
 
             });
