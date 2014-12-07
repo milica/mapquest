@@ -103,6 +103,15 @@ body {
       }
     }
 
+    & > .info {
+      @include flex(0 0 auto);
+      border-bottom: 1px solid #ddd;
+    }
+    & > .list {
+      @include flex(1);
+      overflow-y: auto;
+    }
+
   }
 
   &.quests {
@@ -289,6 +298,10 @@ body {
         float: right;
         padding: 12px 0;
       }
+      .ranking {
+        float: right;
+        padding-top: 3px;
+      }
     }
   }
 }
@@ -402,6 +415,20 @@ body {
   }
 }
 
+.score,
+.rank {
+  display: block;
+  padding: 10px;
+  &.inline {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    min-width: 15px;
+    text-align: center;
+    font-weight: normal;
+  }
+}
+
 .score {
   display: block;
   padding: 10px;
@@ -409,8 +436,12 @@ body {
 
 .rank {
   font-weight: bold;
-  padding: 10px;
-  display: block;
+  &.inline {
+    @include border-radius(12px);
+    background-color: $green;
+    color: #fff;
+    padding: 5px;
+  }
 }
 
 .date {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mapQuestApp')
-    .directive('header', ['$templateCache', function ($templateCache) {
+    .directive('header', ['$templateCache', '$location', 'User', function ($templateCache, $location, User) {
         return {
             replace: true,
             scope: {
@@ -18,6 +18,18 @@ angular.module('mapQuestApp')
                 scope.toggleMenu = function() {
 
                     scope.view.menuOpen = !scope.view.menuOpen;
+
+                };
+
+                /**
+                 * Logout user
+                 */
+                scope.logout = function() {
+                    User.logout()
+                        .then(function() {
+                            //$route.reload();
+                            $location.path('/login');
+                        });
 
                 };
 
