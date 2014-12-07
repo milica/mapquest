@@ -47,6 +47,13 @@
             </div>
         </div>
 
+        <div ng-if="view.participant" class="info-row">
+            <div class="label">Share</div>
+            <div class="info">
+                <a href class="btn block white" ng-click="shareResult()"><i class="fa fa-share-alt"></i></a>
+            </div>
+        </div>
+
         <div class="info-row">
             <div class="label">Participants</div>
             <div class="info">
@@ -85,5 +92,6 @@
     <div modal="modal-hit" modal-show="view.showModal.hit" handle-ok="hideModal('hit')"></div>
     <div modal="modal-done" modal-show="view.showModal.done" handle-ok="hideModal('done')"></div>
     <div modal="modal-miss" modal-show="view.showModal.miss" handle-ok="hideModal('miss')"></div>
+    <div modal="modal-share" modal-show="view.showModal.share" handle="hideModal('share')" handle-ok="initShare(attrs)"></div>
 
 </div>

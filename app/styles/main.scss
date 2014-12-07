@@ -4,7 +4,7 @@
 @import 'common';
 
 html, body {
-  -webkit-overflow-scrolling: touch;
+  //-webkit-overflow-scrolling: touch;
   overflow-x: none;
   height: 100%;
 }
@@ -61,12 +61,23 @@ body {
     background-position: center 0;
     @include background-size(100px 100px);
   }
+
+  &.small {
+    font-size: 30px;
+    margin: 20px 0;
+    .q {
+      width: 50px;
+      height: 60px;
+      @include background-size(60px 60px);
+    }
+  }
 }
 
 /* Screen */
 .screen {
   @include flex(1);
   @extend %flex-column;
+  @extend %touch-scroll;
   max-width: 320px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -85,10 +96,12 @@ body {
   & > .tab {
     @include flex(1);
     overflow-y: auto;
+    @extend %touch-scroll;
   }
 
   & > .tab {
     position: relative;
+    padding: 0 0 20px 0;
     @extend %flex-column;
 
     & > .map {
@@ -100,6 +113,7 @@ body {
       @extend %flex-row;
       .btn {
         text-transform: none;
+        @include flex(1);
       }
     }
 
@@ -110,6 +124,7 @@ body {
     & > .list {
       @include flex(1);
       overflow-y: auto;
+      @extend %touch-scroll;
     }
 
   }
@@ -124,6 +139,10 @@ body {
 
         & > .status-text {
           @include flex(1);
+          min-width: 100px;
+        }
+        & > .actions {
+          @include flex(0 0 auto);
         }
       }
 
@@ -146,6 +165,14 @@ body {
         }
       }
 
+    }
+  }
+
+  &.about {
+    p {
+      text-align: center;
+      margin: 5px 20px;
+      padding: 0;
     }
   }
 }
@@ -208,6 +235,7 @@ body {
     position: absolute;
     top: 50px;
     right: 0;
+    z-index: 102;
     @extend %menu;
   }
 }
@@ -220,6 +248,7 @@ body {
   &.tabs {
     a {
       text-align: center;
+      @include flex(1);
       &.active {
         background-color: #fff;
       }
@@ -381,11 +410,11 @@ body {
   @extend %flex-row;
   border-bottom: 1px solid #eee;
 
-  .label,
-  .info {
-    display: inline-block;
-    vertical-align: middle;
-  }
+  //.label,
+  //.info {
+  //  display: inline-block;
+  //  vertical-align: middle;
+  //}
   .label {
     @include flex(1);
     padding: 10px;
@@ -455,6 +484,27 @@ body {
     padding: 16px 10px;
     margin: 10px auto;
     width: 90%;
+  }
+}
+
+.share-actions {
+  li {
+    &:first-child {
+      border-bottom: 1px solid #ddd;
+    }
+    a {
+      display: block;
+      padding: 10px;
+      i, span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i {
+        font-size: 30px;
+        color: $green;
+        margin-right: 10px;
+      }
+    }
   }
 }
 

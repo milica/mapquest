@@ -42,3 +42,7 @@
     background: rgba(255,255,255,0.5) inline-image('loader.gif') no-repeat center center;
   }
 }
+
+%touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}

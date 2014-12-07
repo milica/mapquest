@@ -4,7 +4,7 @@ angular.module('mapQuestApp')
     .service('Api', ['$resource', function ($resource) {
 
         var self = {};
-        var apiUrl = '/api';
+        var apiUrl = 'api';
 
         self.login = $resource(apiUrl + '/login', {}, {
             post: {method: 'POST'}

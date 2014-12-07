@@ -38,20 +38,21 @@ angular.module('mapQuestApp')
 
             var user = {
                 username: username,
-                password: password
+                password: password,
+                id: 1
             };
 
             self.setSessionUser(user);
-
             deferred.resolve();
 
 //            Api.login.post({}, {username: username, password: password}).$promise
 //                .then(function(result) {
 //
+//                    console.log(result);
 //                    user.id = result.id;
 //
 //                    self.setSessionUser(user);
-
+//
 //                    deferred.resolve(user);
 //
 //                }, function(error) {
