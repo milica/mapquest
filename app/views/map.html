@@ -1,0 +1,47 @@
+<header title="{{ view.map.name }}"></header>
+
+<div class="screen map" ng-class="{loading: view.loading}">
+
+    <div class="toolbar tabs">
+        <a href class="btn block" ng-class="{active: view.tab === 'info'}" ng-click="switchTab('info')"><i class="fa fa-info"></i> Info</a>
+        <a href class="btn block" ng-class="{active: view.tab === 'map'}" ng-click="switchTab('map')"><i class="fa fa-map-marker"></i> Map</a>
+    </div>
+
+    <div class="tab" ng-show="view.tab === 'info'">
+
+        <div class="info-row">
+            <div class="label">Map</div>
+            <div class="info">
+                <h2>{{ view.map.name }}</h2>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">Quests</div>
+            <div class="info">
+                <a class="btn block white" href>{{ view.map.quests }} <i class="fa fa-chevron-right to-right"></i></a>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">Create</div>
+            <div class="info">
+                <a ng-href="#/new-quest/{{ view.map.id }}" class="btn block white"><i class="fa fa-plus"></i></a>
+            </div>
+        </div>
+
+    </div>
+    <!-- # .tab - info -->
+
+    <div class="tab" ng-show="view.tab === 'map'">
+
+        <div class="map" map="view.map" is-open="view.tab === 'map'"></div>
+
+        <div class="map-actions">
+            <a href class="btn block" ng-click="showAll()"><i class="fa fa-arrows"></i> show all</a>
+            <a href class="btn block" ng-click="getCurrentLocation()"><i class="fa fa-crosshairs"></i> location</a>
+        </div>
+    </div>
+    <!-- # .tab - map -->
+
+</div>

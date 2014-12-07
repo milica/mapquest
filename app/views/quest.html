@@ -50,7 +50,7 @@
         <div class="info-row">
             <div class="label">Participants</div>
             <div class="info">
-                <a class="btn block white" href><i class="fa fa-chevron-right"></i></a>
+                <a class="btn block white" href>{{ view.quest.participants }} <i class="fa fa-chevron-right to-right"></i></a>
             </div>
         </div>
 
@@ -67,6 +67,8 @@
         </div>
 
     </div>
+    <!-- # .tab - info -->
+
     <div class="tab" ng-show="view.tab === 'map'">
 
         <div class="map" map="view.quest.map" quest="view.quest" is-open="view.tab === 'map'"></div>
@@ -76,6 +78,7 @@
             <a href class="btn block" ng-click="getCurrentLocation()"><i class="fa fa-crosshairs"></i> location</a>
         </div>
     </div>
+    <!-- # .tab - map -->
 
     <div ng-if="view.participant" modal="modal-confirm" message="Are you sure you want to quit the quest?" modal-show="view.showModal.quit" handle="hideModal('quit')" handle-ok="confirmQuit()"></div>
     <div modal="modal-joined" message="Congrats! Now get out and conquer some places!" modal-show="view.showModal.join" handle-ok="hideModal('quit')"></div>

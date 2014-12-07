@@ -57,6 +57,7 @@ angular.module('mapQuestApp')
                 status: statuses[status],
                 startDate: '2014-10-11',
                 finishDate: '2014-12-11',
+                participants: _.random(0, 1000),
                 map: {
                     title: 'Beograd',
                     areas: [

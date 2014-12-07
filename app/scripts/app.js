@@ -24,6 +24,10 @@ angular
                 templateUrl: 'views/maps.html',
                 controller: 'MapsCtrl'
             })
+            .when('/map/:id', {
+                templateUrl: 'views/map.html',
+                controller: 'MapCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

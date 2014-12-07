@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mapQuestApp')
-    .controller('QuestCtrl', ['$scope', '$rootScope', '$routeParams', '$q', 'Map', 'Quest', 'User', 'gMap', function ($scope, $rootScope, $routeParams, $q, Map, Quest, User, gMap) {
+    .controller('QuestCtrl', ['$scope', '$rootScope', '$routeParams', '$q', 'Quest', 'User', 'gMap', function ($scope, $rootScope, $routeParams, $q, Quest, User, gMap) {
 
         $scope.view = {};
 

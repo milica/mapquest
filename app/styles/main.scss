@@ -359,6 +359,14 @@ body {
       margin: 0;
       font-size: 16px;
     }
+    .btn {
+      .fa {
+        &.to-right {
+          float: right;
+          margin-top: 2px;
+        }
+      }
+    }
   }
 }
 
