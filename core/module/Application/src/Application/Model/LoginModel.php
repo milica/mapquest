@@ -1,5 +1,6 @@
 <?php
 namespace Application\Model;
+use Application\Document\User;
 
 class LoginModel extends ApplicationModel{
 
