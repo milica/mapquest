@@ -19,9 +19,6 @@ class ApplicationModel extends AbstractActionController{
 
     protected $storage;
 
-
-
-
     protected function setConfig()
     {
         $module = new Module();
