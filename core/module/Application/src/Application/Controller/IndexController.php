@@ -3,7 +3,7 @@
 namespace Application\Controller;
 
 
-use Application\Document\User;
+
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Shared\ApplicationTrait;
