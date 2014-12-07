@@ -1,13 +1,18 @@
 'use strict';
 
 angular.module('mapQuestApp')
-    .controller('NewQuestCtrl', ['$scope', '$location', '$filter', 'Map', 'Quest', function ($scope, $location, $filter, Map, Quest) {
+    .controller('NewQuestCtrl', ['$scope', '$location', '$filter', '$routeParams', 'Map', 'Quest', function ($scope, $location, $filter, $routeParams, Map, Quest) {
 
         $scope.view = {};
 
         $scope.view.maps = [];
-        $scope.view.quest = {};
         $scope.view.loading = true;
+
+        $scope.view.quest = {};
+
+        if ($routeParams.map) {
+            $scope.view.quest.map = parseInt($routeParams.map, 10);
+        }
 
         $scope.view.datepicker = {
             start: false,

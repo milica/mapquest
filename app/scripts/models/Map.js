@@ -18,8 +18,8 @@ angular.module('mapQuestApp')
             _.times(10, function(i) {
 
                 quests.push({
-                    id: i,
-                    name: 'Map ' + i
+                    id: (i + 1),
+                    name: 'Map ' + (i + 1)
                 });
 
             });
@@ -43,7 +43,7 @@ angular.module('mapQuestApp')
             var deferred = $q.defer();
 
             deferred.resolve({data: {
-                id: 123124,
+                id: 1,
                 name: 'Map some',
                 quests: _.random(0, 1000),
                 areas: [

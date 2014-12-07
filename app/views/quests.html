@@ -3,18 +3,25 @@
 <div class="screen quests" ng-class="{loading: view.loading}">
 
     <div class="toolbar">
-        <span class="status-text">{{ view.status }} <span class="status {{ view.status }}" ng-show="view.status !== 'all'"><i class="fa fa-circle"></i></span></span>
-        <div class="actions">
-            <a ng-href="#/new-quest" class="btn"><i class="fa fa-plus"></i></a>
-            <div class="filter" ng-class="{open: view.filterOpen}">
-                <a href class="btn filter-toggle" ng-click="toggleFilter()"><i class="fa fa-ellipsis-h"></i></a>
-                <ul>
-                    <li><a href ng-click="filter('all')"><span class="status-text">all</span></a></li>
-                    <li><a href ng-click="filter('running')"><span class="status-text">running <span class="status running"><i class="fa fa-circle"></i></span></span></a></li>
-                    <li><a href ng-click="filter('pending')"><span class="status-text">pending <span class="status pending"><i class="fa fa-circle"></i></span></span></a></li>
-                    <li><a href ng-click="filter('finished')"><span class="status-text">finished <span class="status finished"><i class="fa fa-circle"></i></span></span></a></li>
-                </ul>
+        <div class="info-actions">
+            <span class="status-text">{{ view.status }} <span class="status {{ view.status }}" ng-show="view.status !== 'all'"><i class="fa fa-circle"></i></span></span>
+            <div class="actions">
+                <a ng-href="#/new-quest" class="btn"><i class="fa fa-plus"></i></a>
+                <div class="filter" ng-class="{open: view.filterOpen}">
+                    <a href class="btn filter-toggle" ng-click="toggleFilter()"><i class="fa fa-ellipsis-h"></i></a>
+                    <ul>
+                        <li><a href ng-click="filter('all')"><span class="status-text">all</span></a></li>
+                        <li><a href ng-click="filter('running')"><span class="status-text">running <span class="status running"><i class="fa fa-circle"></i></span></span></a></li>
+                        <li><a href ng-click="filter('pending')"><span class="status-text">pending <span class="status pending"><i class="fa fa-circle"></i></span></span></a></li>
+                        <li><a href ng-click="filter('finished')"><span class="status-text">finished <span class="status finished"><i class="fa fa-circle"></i></span></span></a></li>
+                    </ul>
+                </div>
             </div>
+        </div>
+        <div class="map-filter">
+            <select class="input" placeholder="Map" name="map" ng-model="view.mapId" ng-change="changeMap()" ng-options="map.id as map.name for map in view.maps" required>
+                <option value>-- filter by map --</option>
+            </select>
         </div>
     </div>
 

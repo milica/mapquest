@@ -11,7 +11,7 @@
         </div>
 
         <div class="form-row" ng-class="{'form-row-error': view.form.map.$invalid && view.form.$dirty}">
-            <select class="input" placeholder="Map" ng-model="view.quest.map" name="map" ng-options="map.name for map in view.maps" required>
+            <select class="input" placeholder="Map" name="map" ng-model="view.quest.map" ng-options="map.id as map.name for map in view.maps" required>
                 <option value>-- choose --</option>
             </select>
         </div>

@@ -25,7 +25,8 @@ angular.module('mapQuestApp')
                     name: 'Quest ' + i,
                     status: statuses[status],
                     startDate: '2014-10-11',
-                    finishDate: '2014-12-11'
+                    finishDate: '2014-12-11',
+                    map: _.random(0, 9)
                 });
 
             });
@@ -52,13 +53,14 @@ angular.module('mapQuestApp')
             var status = _.random(0, (statuses.length - 1));
 
             deferred.resolve({data: {
-                id: 123124,
+                id: 2,
                 name: 'Quest some',
                 status: statuses[status],
                 startDate: '2014-10-11',
                 finishDate: '2014-12-11',
                 participants: _.random(0, 1000),
                 map: {
+                    id: 2,
                     title: 'Beograd',
                     areas: [
                         {

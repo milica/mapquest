@@ -1,20 +1,29 @@
 'use strict';
 
 angular.module('mapQuestApp')
-    .controller('QuestsCtrl', ['$scope', 'Quest', function ($scope, Quest) {
+    .controller('QuestsCtrl', ['$scope', '$q', '$routeParams', '$location', 'Quest', 'Map', function ($scope, $q, $routeParams, $location, Quest, Map) {
 
         $scope.view = {};
 
         $scope.view.loading = true;
+        $scope.view.mapId = $routeParams.map ? parseInt($routeParams.map, 10) : null;
 
         var quests = [];
 
-        Quest.getList()
-            .then(function(result) {
 
-                quests = result.list;
+        $q.all([
+                Map.getList(),
+                Quest.getList($routeParams.map)
+            ]).then(function(result) {
+
+                $scope.view.maps = result[0].list;
+
+                quests = result[1].list;
+
                 $scope.filter('all');
+
                 $scope.view.loading = false;
+
             });
 
         /**
@@ -53,6 +62,15 @@ angular.module('mapQuestApp')
         $scope.clearSearch = function() {
 
             $scope.view.search = null;
+
+        };
+
+        /**
+         * Filter quests by map
+         */
+        $scope.changeMap = function() {
+
+            $location.path('/quests/' + $scope.view.mapId);
 
         };
 

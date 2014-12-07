@@ -107,9 +107,25 @@ body {
 
   &.quests {
     .toolbar {
-      & > .status-text {
-        @include flex(1);
+      @extend %flex-column;
+
+      .info-actions {
+        @extend %flex-row;
+        border-bottom: 1px solid #ddd;
+
+        & > .status-text {
+          @include flex(1);
+        }
       }
+
+      .map-filter {
+        .input {
+          height: 42px;
+          width: 100%;
+          border: none;
+        }
+      }
+
     }
   }
 }

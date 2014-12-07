@@ -12,7 +12,15 @@ angular
                 templateUrl: 'views/quests.html',
                 controller: 'QuestsCtrl'
             })
+            .when('/quests/:map', {
+                templateUrl: 'views/quests.html',
+                controller: 'QuestsCtrl'
+            })
             .when('/new-quest', {
+                templateUrl: 'views/new-quest.html',
+                controller: 'NewQuestCtrl'
+            })
+            .when('/new-quest/:map', {
                 templateUrl: 'views/new-quest.html',
                 controller: 'NewQuestCtrl'
             })
