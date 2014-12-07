@@ -90,9 +90,19 @@ body {
   & > .tab {
     position: relative;
     @extend %flex-column;
+
     & > .map {
       @include flex(1);
     }
+
+    & > .map-actions {
+      @include flex(0 0 auto);
+      @extend %flex-row;
+      .btn {
+        text-transform: none;
+      }
+    }
+
   }
 
   &.quests {
@@ -238,6 +248,9 @@ body {
     border-bottom: 1px solid #ddd;
     a {
       display: block;
+      .status {
+        float: left;
+      }
       .title {
         padding: 10px;
         margin-right: 40px;
@@ -247,9 +260,42 @@ body {
         width: 40px;
         text-align: center;
         float: right;
-        padding: 10px 0;
+        padding: 12px 0;
       }
     }
+  }
+}
+
+.search {
+  border-bottom: 1px solid #ddd;
+  position: relative;
+
+  .input,
+  .search-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .input {
+    padding: 10px;
+    width: 250px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+  }
+  .search-icon {
+    padding: 8px 11px;
+  }
+  .clear-icon {
+    position: absolute;
+    z-index: 100;
+    top: 3px;
+    right: 58px;
+    display: block;
+    width: 32px;
+    padding: 7px 0px;
+    text-align: center;
+    background-color: #eee;
+    @include border-radius(16px);
   }
 }
 
@@ -308,6 +354,11 @@ body {
       font-size: 16px;
       font-weight: normal;
     }
+    p {
+      padding: 11px 10px;
+      margin: 0;
+      font-size: 16px;
+    }
   }
 }
 
@@ -336,16 +387,6 @@ body {
   }
 }
 
-.map-actions {
-  @extend %flex-row;
-  position: absolute;
-  z-index: 100;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  .btn {
-    text-transform: lowercase;
-  }
-}
+
 
 

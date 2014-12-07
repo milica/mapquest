@@ -18,6 +18,8 @@ angular.module('mapQuestApp')
                         scope.errors.push(message);
                     }
 
+                    if(!scope.$$phase) { scope.$digest(); }
+
                 });
 
                 /**

@@ -168,6 +168,12 @@ angular.module('mapQuestApp')
 
         self.markAreaAsDone = function(id, areaId) {
 
+            var deferred = $q.defer();
+
+            deferred.resolve();
+
+            return deferred.promise;
+
             //return Api.quests.update({id: id}, {area_id: areaId}).$promise;
 
         };

@@ -20,6 +20,10 @@ angular
                 templateUrl: 'views/quest.html',
                 controller: 'QuestCtrl'
             })
+            .when('/maps', {
+                templateUrl: 'views/maps.html',
+                controller: 'MapsCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

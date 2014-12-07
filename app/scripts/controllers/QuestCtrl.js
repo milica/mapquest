@@ -208,7 +208,11 @@ angular.module('mapQuestApp')
 
                 gMap.markAsDone(area, poly);
 
-                Quest.markAreaAsDone($routeParams.id, area.id);
+                Quest.markAreaAsDone($routeParams.id, area.id)
+                    .then(function(result) {
+                        area.status = 1;
+                        //$scope.view.participant = result.data;
+                    });
 
             } else {
                 $scope.view.showModal.miss = true;

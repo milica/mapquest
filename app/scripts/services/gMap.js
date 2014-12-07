@@ -304,7 +304,15 @@ angular.module('mapQuestApp')
                         position: p,
                         map: self.map,
                         flat: true,
-                        icon: icon
+//                        icon: icon
+                        icon: {
+                            path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+                            scale: 5,
+                            fillOpacity: 1,
+                            strokeWeight: 1,
+                            fillColor: '#005826',
+                            strokeColor: '#730000'
+                        }
                     });
 
                     if (move) {
@@ -314,10 +322,16 @@ angular.module('mapQuestApp')
                     deferred.resolve(p);
 
                 }, function() {
-                    deferred.reject('The Geolocation service failed.');
+                    var error = 'The Geolocation service failed.';
+
+                    $rootScope.$broadcast('httpError', {message: error});
+                    deferred.reject(error);
                 });
             } else {
-                deferred.reject('Your browser doesn\'t support geolocation.');
+                var error = 'Your browser doesn\'t support geolocation.';
+
+                $rootScope.$broadcast('httpError', {message: error});
+                deferred.reject(error);
             }
 
             return deferred.promise;

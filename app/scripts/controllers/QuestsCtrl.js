@@ -13,7 +13,7 @@ angular.module('mapQuestApp')
             .then(function(result) {
 
                 quests = result.list;
-                $scope.filter('running');
+                $scope.filter('all');
                 $scope.view.loading = false;
             });
 
@@ -37,9 +37,22 @@ angular.module('mapQuestApp')
 
             $scope.view.status = status;
 
-            $scope.view.quests = _.filter(quests, function(q) {
-                return q.status === status;
-            });
+            if (status === 'all') {
+                $scope.view.quests = quests;
+            } else {
+                $scope.view.quests = _.filter(quests, function(q) {
+                    return q.status === status;
+                });
+            }
+
+        };
+
+        /**
+         * Clear search filed and reset filtering
+         */
+        $scope.clearSearch = function() {
+
+            $scope.view.search = null;
 
         };
 

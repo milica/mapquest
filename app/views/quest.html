@@ -54,6 +54,13 @@
             </div>
         </div>
 
+        <div class="info-row" ng-if="view.quest.status !== 'finished' && view.participant">
+            <div class="label">Rules</div>
+            <div class="info">
+                <p>Just tap the area you claim you're in</p>
+            </div>
+        </div>
+
         <div class="action" ng-if="view.quest.status !== 'finished'">
             <button ng-if="!view.participant" ng-click="join()" ng-disabled="view.saving" class="btn green block">Join</button>
             <button ng-if="view.participant" ng-click="quit()" ng-disabled="view.saving" class="btn brown block">Quit</button>
@@ -61,6 +68,7 @@
 
     </div>
     <div class="tab" ng-show="view.tab === 'map'">
+
         <div class="map" map="view.quest.map" quest="view.quest" is-open="view.tab === 'map'"></div>
 
         <div class="map-actions">
