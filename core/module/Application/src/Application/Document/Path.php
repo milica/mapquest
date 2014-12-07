@@ -18,8 +18,6 @@ class Path {
     /** @ODM\Field(type="boolean") */
     private $status = false;
 
-
-
     public function setParticipant($val){
         if(!is_a($val, 'Application\Document\User')){ return false;}
         $this->participant = $val;
@@ -39,4 +37,15 @@ class Path {
         return true;
     }
 
+    public function getParticipant(){
+        return $this->participant;
+    }
+
+    public function getArea(){
+        return $this->area;
+    }
+
+    public function getStatus(){
+        return $this->status;
+    }
 }
