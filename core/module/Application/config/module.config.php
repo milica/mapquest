@@ -30,10 +30,7 @@ return array(
                 'type' => 'segment',
                 'options' => array(
                     'route'    => '/login',
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-                        'action'     => 'login',
-                    ),
+                    'defaults' => array('controller' => 'LoginAPI'),
                 ),
             ),
 
@@ -49,7 +46,7 @@ return array(
             ),
 
 
-
+/*
             'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -77,6 +74,7 @@ return array(
                     ),
                 ),
             ),
+            */
         ),
     ),
     'service_manager' => array(
@@ -100,10 +98,14 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index'  => 'Application\Controller\IndexController',
+            'LoginAPI'                      => 'Application\API\LoginAPI'
         ),
     ),
     'view_manager' => array(
+        'strategies' => array(
+            'ViewJsonStrategy',
+        ),
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
@@ -118,9 +120,9 @@ return array(
         'template_path_stack' => array(
             'application' => __DIR__ . '/../view',
         ),
-        'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-        ),
+
+
+
     ),
     // Placeholder for console routes
     'console' => array(

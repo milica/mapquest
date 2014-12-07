@@ -9,5 +9,13 @@ class Area {
     /** @ODM\Id */
     private $id;
 
+    // ******* SETTERS ******* //
+
+    // #****** SETTERS ******# //
+
+
+    // ******* GETTERS ******* //
+
+    // #****** GETTERS ******# //
 
 }
