@@ -17,7 +17,8 @@ angular.module('mapQuestApp')
             join: false,
             hit: false,
             miss: false,
-            done: false
+            done: false,
+            share: false
         };
 
         $q.all([
@@ -164,6 +165,32 @@ angular.module('mapQuestApp')
         $scope.hideModal = function(modal) {
 
             $scope.view.showModal[modal] = false;
+
+        };
+
+        $scope.shareResult = function() {
+
+            $scope.view.showModal.share = true;
+
+        };
+
+        $scope.initShare = function(what) {
+
+            $scope.view.showModal.share = false;
+
+            var score = $scope.view.participant.score;
+            var rank = $scope.view.participant.rank;
+            var total = $scope.view.participant.path.length;
+
+            var text = 'I won ' + score + ' out of  ' + total + '! My rank is ' + rank + '! Beat me if you can!';
+            var url;
+
+            if (what === 'tw') {
+                url = 'https://twitter.com/share?text=' + text;
+                window.open(url, '_blank');
+            } else if (what === 'fb') {
+                //url = 'https://www.facebook.com/dialog/share?app_id='+ appConfig.fbAppId +'&display=page&href=http://mapquest.kamilica.koding.io/api/share/' + $scope.participant.id + '&redirect_uri=http://mapquest.kamilica.koding.io';
+            }
 
         };
 

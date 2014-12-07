@@ -61,6 +61,16 @@ body {
     background-position: center 0;
     @include background-size(100px 100px);
   }
+
+  &.small {
+    font-size: 30px;
+    margin: 20px 0;
+    .q {
+      width: 50px;
+      height: 60px;
+      @include background-size(60px 60px);
+    }
+  }
 }
 
 /* Screen */
@@ -155,6 +165,14 @@ body {
         }
       }
 
+    }
+  }
+
+  &.about {
+    p {
+      text-align: center;
+      margin: 5px 20px;
+      padding: 0;
     }
   }
 }
@@ -466,6 +484,27 @@ body {
     padding: 16px 10px;
     margin: 10px auto;
     width: 90%;
+  }
+}
+
+.share-actions {
+  li {
+    &:first-child {
+      border-bottom: 1px solid #ddd;
+    }
+    a {
+      display: block;
+      padding: 10px;
+      i, span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i {
+        font-size: 30px;
+        color: $green;
+        margin-right: 10px;
+      }
+    }
   }
 }
 

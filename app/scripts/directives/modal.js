@@ -46,9 +46,9 @@ angular.module('mapQuestApp')
                 /**
                  * Close modal (remove it from the DOM)
                  */
-                scope.ok = function () {
+                scope.ok = function (attrs) {
                     modal.remove();
-                    scope.handleOk();
+                    scope.handleOk({attrs: attrs});
                 };
 
 
