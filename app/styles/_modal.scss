@@ -26,5 +26,8 @@
   }
   .actions {
     @extend %flex-row;
+    .btn {
+      @include flex(1);
+    }
   }
 }

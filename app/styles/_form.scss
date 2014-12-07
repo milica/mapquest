@@ -36,6 +36,13 @@
   }
 }
 
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number] {
+  @include appearance(none);
+}
+
 select {
   background-color: #fff;
   &.input {

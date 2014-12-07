@@ -89,6 +89,7 @@ body {
 
   & > .tab {
     position: relative;
+    padding: 0 0 20px 0;
     @extend %flex-column;
 
     & > .map {
@@ -100,6 +101,7 @@ body {
       @extend %flex-row;
       .btn {
         text-transform: none;
+        @include flex(1);
       }
     }
 
@@ -124,6 +126,9 @@ body {
 
         & > .status-text {
           @include flex(1);
+        }
+        & > .actions {
+          @include flex(0 0 auto);
         }
       }
 
@@ -208,6 +213,7 @@ body {
     position: absolute;
     top: 50px;
     right: 0;
+    z-index: 102;
     @extend %menu;
   }
 }
@@ -220,6 +226,7 @@ body {
   &.tabs {
     a {
       text-align: center;
+      @include flex(1);
       &.active {
         background-color: #fff;
       }
@@ -381,11 +388,11 @@ body {
   @extend %flex-row;
   border-bottom: 1px solid #eee;
 
-  .label,
-  .info {
-    display: inline-block;
-    vertical-align: middle;
-  }
+  //.label,
+  //.info {
+  //  display: inline-block;
+  //  vertical-align: middle;
+  //}
   .label {
     @include flex(1);
     padding: 10px;
