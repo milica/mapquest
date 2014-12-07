@@ -29,9 +29,8 @@ angular.module('mapQuestApp')
                     $scope.view.loading = false;
                     $location.path('/');
 
-                }, function(error) {
+                }, function() {
                     $scope.view.loading = false;
-                    $scope.view.error = error;
                 });
 
 
