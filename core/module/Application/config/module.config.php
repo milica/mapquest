@@ -26,6 +26,17 @@ return array(
     ),
     'router' => array(
         'routes' => array(
+            'login'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/login',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'login',
+                    ),
+                ),
+            ),
+
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -37,16 +48,7 @@ return array(
                 ),
             ),
 
-            'registration'=> array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/registration',
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-                        'action'     => 'registration',
-                    ),
-                ),
-            ),
+
 
             'application' => array(
                 'type'    => 'Literal',

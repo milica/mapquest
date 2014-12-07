@@ -6,11 +6,16 @@ namespace Application\Controller;
 use Application\Document\User;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-
+use Application\Shared\ApplicationTrait;
 
 
 class IndexController extends AbstractActionController
 {
+
+    use ApplicationTrait;
+
+    protected $storage;
+
     protected $entityManager;
 
     protected function setEntityManager($em)
@@ -27,47 +32,76 @@ class IndexController extends AbstractActionController
         return $this->entityManager;
     }
 
-    public function indexAction()
+    protected function getAuthAdapter()
     {
-       // $this->install();
+        return $this->getServiceLocator()->get('doctrine.authenticationservice.odm_default');
     }
 
-    public function registrationAction()
+
+
+    public function indexAction()
     {
+
+    }
+
+    public function loginAction()
+    {
+        $result = $this->standardResult();
+        $result->success = false;
+
         $request = $this->getRequest();
-        $message = null;
-        $success = 0;
 
         if ($request->isPost()){
 
-            $email      = $request->getPost('email');
-            $password   = $request->getPost('password');
-            $type       = $request->getPost('type');
+            $messages = null;
 
-            $existing_user = $this->getEntityManager()->getRepository('Application\Document\User')->findOneBy(array('email' => $email));
-            if(!empty($existing_user)){
-                $message = 'User already exist';
+            $username      = $request->getPost('username');
+            $password       = $request->getPost('password');
+
+            if(empty($username)){ return $this->logErrors('Missing Username'); }
+            if(empty($password)){ return $this->logErrors('Missing Password'); }
+
+            $existing_user = $this->getEntityManager()->getRepository('Application\Document\User')->findOneBy(array('username' => $username));
+            if(empty($existing_user)){
+                $User = new User();
+                $User->setPassword($password);
+                $User->setUsername($username);
+
+                if(empty($messages)){
+                    $this->getEntityManager()->persist($User);
+                    $this->getEntityManager()->flush();
+                }
             }
 
-            $User = new User();
-            if(!$User->setPassword($password)){$message = 'Empty Password';}
-            if(!$User->setUsername($email)){$message = 'Invalid Email';}
-            if(!$User->setEmail($email)){$message = 'Invalid Email';}
 
-            if(empty($message)){
-                $this->getEntityManager()->persist($User);
-                $this->getEntityManager()->flush();
+            $this->getAuthAdapter()->getAdapter()->setIdentityValue($username);
+            $module  = new \Application\Module;
+            $config  = new \Zend\Config\Config($module->getConfig());
+            $this->getAuthAdapter()->getAdapter()->setCredentialValue(crypt($password,$config->auth->secreet));
+            $auth_result = $this->getAuthAdapter()->authenticate();
+
+            foreach($auth_result->getMessages() as $message)
+            {
+                $messages[] = $message;
             }
 
+            if ($auth_result->isValid()) {
+                $messages = 'success';
+                $result->success = true;
+                $this->getAuthAdapter()->setStorage($this->getSessionStorage());
+                $this->getAuthAdapter()->getStorage()->write(array('username' => $username));
+            }
+
+            $result->message = $messages;
 
             $view = new ViewModel();
-            $view->setTemplate('admin/admin/message');
+            $view->setTemplate('application/index/message');
             $view->setTerminal(true);
 
             $json = json_encode(
                 array(
-                    'message' => $message,
-                    'success' => $success
+                    'message' => $result->message,
+                    'success' => $result->success
                 )
             );
             echo $json;
@@ -78,11 +112,4 @@ class IndexController extends AbstractActionController
 
 
 
-    private function install()
-    {
-        $user = new User();
-        $user->setUser('master','master','master@master.com','Master','Master');
-        $this->getEntityManager()->persist($user);
-        $this->getEntityManager()->flush();
-    }
 }
