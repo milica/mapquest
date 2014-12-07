@@ -1,0 +1,13 @@
+<h1>ERROR HAPPEND</h1>
+<?php
+echo $this->exception->getMessage();
+echo $this->exception->getTraceAsString() ;
+
+?>
+
+<?php
+$message = $this->exception->getMessage();
+$message .= "\n \n---------------------------\n \n \n";
+$message .= $this->exception->getTraceAsString() ;
+$subject = get_class($this->exception);
+mail('damnjanj@gmail.com',$subject, $message);
