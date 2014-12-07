@@ -1,0 +1,23 @@
+<div class="screen login">
+
+    <div class="logo"><span>map</span><i class="q"></i><span>uest</span></div>
+
+    <p ng-if="view.error" class="error center">{{ view.error }}</p>
+
+    <form class="form center" name="form" ng-submit="login()" novalidate>
+
+        <div class="form-row" ng-class="{'form-row-error': form.username.$invalid && form.$dirty}">
+            <input type="text" class="input" placeholder="Username" ng-model="view.form.username" name="username" required>
+        </div>
+
+        <div class="form-row" ng-class="{'form-row-error': form.password.$invalid && form.$dirty}">
+            <input type="password" class="input" placeholder="Password" ng-model="view.form.password" name="password" required>
+        </div>
+
+        <div class="form-row">
+            <button type="submit" ng-disabled="view.loading" class="btn block green big">Go!</button>
+        </div>
+
+    </form>
+
+</div>

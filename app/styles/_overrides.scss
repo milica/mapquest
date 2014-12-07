@@ -1,0 +1,93 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #555;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button, a {
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+/* Bootstrap's datepicker style override */
+.dropdown-menu {
+  position: fixed;
+  width: 305px;
+  height: 270px;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  &:focus {
+    outline: none;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  table {
+    background-color: $green;
+    margin: 0 auto;
+
+    &:focus {
+      outline: none;
+    }
+
+    thead {
+      tr {
+        background-color: $green;
+        th {
+          color: #fff;
+          font-size: 12px;
+          padding: 5px 0;
+          text-align: center;
+          .btn {
+            @extend .green;
+            border: none;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          font-size: 12px;
+          .btn {
+            font-size: 14px;
+            padding: 8px 12px;
+            &.active,
+            &:hover {
+              color: #fff;
+              background-color: $green;
+            }
+            span {
+              &.text-muted {
+                opacity: 0.7;
+              }
+            }
+            &:disabled {
+              span {
+                opacity: 0.4;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

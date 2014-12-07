@@ -1,0 +1,40 @@
+.btn {
+  @include box-shadow(none);
+  border: 1px solid #ddd;
+  background-color: #eee;
+  padding: 9px 16px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:disabled {
+    opacity: 0.7;
+  }
+
+  &.big {
+    padding: 12px 18px;
+  }
+
+  &.block {
+    width: 100%;
+    display: block;
+    @include box-sizing(border-box);
+  }
+
+  &.white {
+    background-color: #fff;
+    border-color: #eee;
+  }
+
+  &.green {
+    color: #fff;
+    background-color: $green;
+    border-color: darken($green, 2%);
+  }
+
+  &.brown {
+    color: #fff;
+    background-color: $brown;
+    border-color: darken($brown, 2%);
+  }
+}

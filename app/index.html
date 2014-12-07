@@ -6,6 +6,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, , maximum-scale=1, user-scalable=no">
 
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-title" content="mapQuest">
+
     <!-- build:css(app) styles/main.css -->
     <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css">
@@ -18,10 +21,13 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="main view-animate-container">
-        <div class="view-animate content" ng-view=""></div>
+    <div class="main" ng-controller="MasterCtrl">
+        <div class="content content-animate" ng-view=""></div>
     </div>
 
+    <error></error>
+
+    <script src="http://maps.google.com/maps/api/js?sensor=false&language=en"></script>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -30,18 +36,42 @@
     <![endif]-->
     <!-- endbuild -->
 
-    <!-- build:js(.) scripts/vendor.js -->
+    <!-- build:js(app) scripts/vendor.js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/google-maps-point-in-polygon/maps.google.polygon.containsLatLng.js"></script>
+    <script src="custom_components/ui-bootstrap-datepicker/ui-bootstrap-datepicker-tpls-0.12.0.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/MainCtrl.js"></script>
+        <script src="scripts/template.js"></script>
+
+        <script src="scripts/controllers/MasterCtrl.js"></script>
+        <script src="scripts/controllers/LoginCtrl.js"></script>
+        <script src="scripts/controllers/QuestsCtrl.js"></script>
+        <script src="scripts/controllers/NewQuestCtrl.js"></script>
+        <script src="scripts/controllers/QuestCtrl.js"></script>
+        <script src="scripts/controllers/MapsCtrl.js"></script>
+        <script src="scripts/controllers/MapCtrl.js"></script>
+
+        <script src="scripts/services/Api.js"></script>
+        <script src="scripts/services/HTTPInterceptor.js"></script>
+        <script src="scripts/services/gMap.js"></script>
+
+        <script src="scripts/directives/error.js"></script>
+        <script src="scripts/directives/header.js"></script>
+        <script src="scripts/directives/modal.js"></script>
+        <script src="scripts/directives/map.js"></script>
+
+        <script src="scripts/models/User.js"></script>
+        <script src="scripts/models/Quest.js"></script>
+        <script src="scripts/models/Map.js"></script>
         <!-- endbuild -->
 </body>
 </html>
