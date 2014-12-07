@@ -30,26 +30,7 @@ trait ApplicationTrait{
 
 
 
-    public function logErrors($error)
-    {
-        $result = new \stdClass();
 
-        $result->success = false;
-        $result->message = $error;
-
-        $view = new ViewModel();
-        $view->setTemplate('application/index/message');
-        $view->setTerminal(true);
-
-        $json = json_encode(
-            array(
-                'message' => $result->message,
-                'success' => $result->success
-            )
-        );
-        echo $json;
-        return $view;
-    }
 
 
     public function standardResult()

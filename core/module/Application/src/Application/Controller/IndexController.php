@@ -111,5 +111,26 @@ class IndexController extends AbstractActionController
     }
 
 
+    public function logErrors($error)
+    {
+        $result = new \stdClass();
 
+        $result->success = false;
+        $result->message = $error;
+
+        $this->response->setStatusCode(400);
+
+        $view = new ViewModel();
+        $view->setTemplate('application/index/message');
+        $view->setTerminal(true);
+
+        $json = json_encode(
+            array(
+                'message' => $result->message,
+                'success' => $result->success
+            )
+        );
+        echo $json;
+        return $view;
+    }
 }
