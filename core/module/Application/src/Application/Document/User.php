@@ -35,6 +35,10 @@ class User {
         $this->config = new \Zend\Config\Config($conf->getConfig());
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getEmail() {
         return $this->email;
     }

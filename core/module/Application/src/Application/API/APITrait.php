@@ -47,7 +47,7 @@ trait APITrait{
             return new JsonModel(array("data" => $result->message));
         }else{
             $this->badRequest();
-            return new JsonModel(array('error' => $result->message, 'message' => 'Error'));
+            return new JsonModel(array('message' => $result->message));
         }
     }
 
