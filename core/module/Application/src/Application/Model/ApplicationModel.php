@@ -33,6 +33,10 @@ class ApplicationModel extends AbstractActionController{
         return $this->config;
     }
 
+    public function getUser()
+    {
+        return $this->dm->getRepository('Application\Document\User')->findOneBy(array('username' => $this->getSessContainer()->storage['username']));
+    }
 
     public function logErrors($error)
     {

@@ -30,13 +30,13 @@ class Quest {
 
     // ******* SETTERS ******* //
     public function setTitle($val) {
+        $val = trim($val);
         if(empty($val)){return false;}
         $this->title = $val;
         return true;
     }
 
     public function setDesc($val) {
-        if(empty($val)){return false;}
         $this->desc = $val;
         return true;
     }

@@ -51,13 +51,22 @@ return array(
                 ),
             ),
 
-            'quest'=> array(
+            'quests'=> array(
                 'type' => 'segment',
                 'options' => array(
-                    'route'    => '/quest[/:id]',
+                    'route'    => '/quests[/:id]',
                     'defaults' => array('controller' => 'QuestAPI'),
                 ),
             ),
+
+            'quests-by-map'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/quests-by-map[/:id]',
+                    'defaults' => array('controller' => 'QuestByMapAPI' ),
+                ),
+            ),
+
 
             'map'=> array(
                 'type' => 'segment',
@@ -147,6 +156,7 @@ return array(
             'QuestAPI'                      => 'Application\API\QuestAPI',
             'MapAPI'                        => 'Application\API\MapAPI',
             'ParticipantAPI'                => 'Application\API\ParticipantAPI',
+            'QuestByMapAPI'                  => 'Application\API\QuestByMapAPI',
         ),
     ),
     'view_manager' => array(
