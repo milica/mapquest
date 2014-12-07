@@ -18,17 +18,18 @@
                 </div>
             </div>
         </div>
-        <div class="map-filter">
-            <select class="input" placeholder="Map" name="map" ng-model="view.mapId" ng-change="changeMap()" ng-options="map.id as map.name for map in view.maps" required>
-                <option value>-- filter by map --</option>
-            </select>
+        <div class="other-filters">
+            <div class="map-filter">
+                <select class="input" ng-class="{default: !view.mapId}" placeholder="Map" name="map" ng-model="view.mapId" ng-change="changeMap()" ng-options="map.id as map.name for map in view.maps" required>
+                    <option value>- map -</option>
+                </select>
+            </div>
+            <div class="search">
+                <input type="text" type="text" placeholder="Search..." class="input" ng-model="view.search.name" />
+                <span class="search-icon"><i class="fa fa-search"></i></span>
+                <a href ng-show="view.search" class="clear-icon" ng-click="clearSearch()"><i class="fa fa-times"></i></a>
+            </div>
         </div>
-    </div>
-
-    <div class="search">
-        <input type="search" type="text" placeholder="Search..." class="input" ng-model="view.search.name" />
-        <span class="search-icon"><i class="fa fa-search"></i></span>
-        <a href ng-show="view.search" class="clear-icon" ng-click="clearSearch()"><i class="fa fa-times"></i></a>
     </div>
 
     <ul class="list">
