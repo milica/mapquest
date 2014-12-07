@@ -40,6 +40,10 @@ angular
                 templateUrl: 'views/participants.html',
                 controller: 'ParticipantsCtrl'
             })
+            .when('/profile/:id', {
+                templateUrl: 'views/profile.html',
+                controller: 'ProfileCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

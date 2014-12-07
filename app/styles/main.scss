@@ -103,6 +103,15 @@ body {
       }
     }
 
+    & > .info {
+      @include flex(0 0 auto);
+      border-bottom: 1px solid #ddd;
+    }
+    & > .list {
+      @include flex(1);
+      overflow-y: auto;
+    }
+
   }
 
   &.quests {

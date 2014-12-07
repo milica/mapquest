@@ -10,7 +10,7 @@
 
     <ul class="list">
         <li ng-repeat="participant in view.participants | filter:view.search">
-            <a ng-href="#/participant/{{ participant.id }}">
+            <a ng-href="#/profile/{{ participant.id }}">
                 <i class="fa fa-chevron-right"></i>
                 <div class="ranking">
                     <span class="score inline">{{ participant.score }} / {{ participant.path.length }}</span>
