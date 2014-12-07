@@ -6,8 +6,8 @@ return array(
                 'server'           => 'ds063150.mongolab.com',
                 'port'             => '63150',
                 'connectionString' => null,
-                'user'             => '',
-                'password'         => '',
+                'user'             => 'root',
+                'password'         => 'root',
                 'dbname'           => 'mapquest',
                 'options'          => array()
             ),
