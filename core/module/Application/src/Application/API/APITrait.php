@@ -4,7 +4,14 @@ namespace Application\API;
 
 use Zend\View\Model\JsonModel;
 /** models **/
+
+use Application\Model\AreaModel;
 use Application\Model\LoginModel;
+use Application\Model\MapModel;
+use Application\Model\ParticipantModel;
+use Application\Model\PathModel;
+use Application\Model\QuestModel;
+
 /**# models #**/
 
 
@@ -52,6 +59,13 @@ trait APITrait{
     }
 
     /*** MODELS ***/
+
+    private function areaModel() { return new AreaModel($this->getEntityManager()); }
     private function loginModel() { return new LoginModel($this->getEntityManager(), $this->getAuthAdapter()); }
+    private function mapModel() { return new MapModel($this->getEntityManager()); }
+    private function participantModel() { return new ParticipantModel($this->getEntityManager()); }
+    private function pathModel() { return new PathModel($this->getEntityManager()); }
+    private function questModel() { return new QuestModel($this->getEntityManager()); }
+
     /***#MODEL#***/
 }

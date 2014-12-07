@@ -30,13 +30,13 @@ class Quest {
 
     // ******* SETTERS ******* //
     public function setTitle($val) {
+        $val = trim($val);
         if(empty($val)){return false;}
         $this->title = $val;
         return true;
     }
 
     public function setDesc($val) {
-        if(empty($val)){return false;}
         $this->desc = $val;
         return true;
     }
@@ -69,6 +69,33 @@ class Quest {
 
 
     // ******* GETTERS ******* //
+    public function getId(){
+        return $this->id;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
+
+    public function getDesc() {
+        return $this->desc;
+    }
+
+    public function getStart() {
+        return $this->start;
+    }
+
+    public function getFinish() {
+        return  $this->finish;
+    }
+
+    public function getUser(){
+        return $this->user;
+    }
+
+    public function getMap(){
+        return $this->map;
+    }
 
     // #****** GETTERS ******# //
 

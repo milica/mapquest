@@ -50,6 +50,12 @@ class Participant {
 
 
     // ******* GETTERS ******* //
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getQuest(){
         return $this->quest;
     }

@@ -12,6 +12,7 @@ class LoginModel extends ApplicationModel{
     {
         $this->dm = $dm;
         $this->auth = $auth;
+        $this->repository = $this->dm->getRepository('Application\Document\User');
     }
 
     public function LogIn($data)
@@ -25,7 +26,7 @@ class LoginModel extends ApplicationModel{
         if(empty($data['password'])){ return $this->logErrors('Missing Password'); }else{$password = $data['password'];}
 
         $user_id = null;
-        $existing_user = $this->dm->getRepository('Application\Document\User')->findOneBy(array('username' => $username));
+        $existing_user = $this->repository->findOneBy(array('username' => $username));
         if(empty($existing_user)){
             $User = new User();
             $User->setPassword($password);
@@ -59,4 +60,6 @@ class LoginModel extends ApplicationModel{
 
         return $result;
     }
+
+
 }

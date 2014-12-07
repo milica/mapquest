@@ -42,6 +42,12 @@ class Path {
 
 
     // ******* GETTERS ******* //
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function getParticipant(){
         return $this->participant;
     }

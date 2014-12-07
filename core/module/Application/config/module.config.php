@@ -26,6 +26,15 @@ return array(
     ),
     'router' => array(
         'routes' => array(
+
+            'area'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/area[/:id]',
+                    'defaults' => array('controller' => 'AreaAPI'),
+                ),
+            ),
+
             'login'=> array(
                 'type' => 'segment',
                 'options' => array(
@@ -33,6 +42,49 @@ return array(
                     'defaults' => array('controller' => 'LoginAPI'),
                 ),
             ),
+
+            'path'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/path[/:id]',
+                    'defaults' => array('controller' => 'PathAPI'),
+                ),
+            ),
+
+            'quests'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/quests[/:id]',
+                    'defaults' => array('controller' => 'QuestAPI'),
+                ),
+            ),
+
+            'quests-by-map'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/quests-by-map[/:id]',
+                    'defaults' => array('controller' => 'QuestByMapAPI' ),
+                ),
+            ),
+
+
+            'map'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/map[/:id]',
+                    'defaults' => array('controller' => 'MapAPI'),
+                ),
+            ),
+
+            'participant'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/participant[/:id]',
+                    'defaults' => array('controller' => 'ParticipantAPI'),
+                ),
+            ),
+
+
 
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -46,7 +98,6 @@ return array(
             ),
 
 
-/*
             'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -74,7 +125,7 @@ return array(
                     ),
                 ),
             ),
-            */
+
         ),
     ),
     'service_manager' => array(
@@ -99,7 +150,13 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index'  => 'Application\Controller\IndexController',
-            'LoginAPI'                      => 'Application\API\LoginAPI'
+            'AreaAPI'                       => 'Application\API\AreaAPI',
+            'LoginAPI'                      => 'Application\API\LoginAPI',
+            'PathAPI'                       => 'Application\API\PathAPI',
+            'QuestAPI'                      => 'Application\API\QuestAPI',
+            'MapAPI'                        => 'Application\API\MapAPI',
+            'ParticipantAPI'                => 'Application\API\ParticipantAPI',
+            'QuestByMapAPI'                  => 'Application\API\QuestByMapAPI',
         ),
     ),
     'view_manager' => array(
