@@ -103,6 +103,13 @@ body {
     }
   }
 }
+/* Map holder */
+.map {
+  position: relative;
+  &.loading {
+    @extend %loading;
+  }
+}
 
 /* Screen header */
 .header {
@@ -323,7 +330,7 @@ body {
 .action {
   .btn.block {
     font-size: 20px;
-    padding: 20px;
+    padding: 16px 10px;
     margin: 10px auto;
     width: 90%;
   }

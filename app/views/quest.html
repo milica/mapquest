@@ -1,13 +1,13 @@
 <header title="{{ view.quest.name }}"></header>
 
-<div class="screen quest" ng-class="{loading: view.loading}" ng-switch="view.tab">
+<div class="screen quest" ng-class="{loading: view.loading}">
 
     <div class="toolbar tabs">
         <a href class="btn block" ng-class="{active: view.tab === 'info'}" ng-click="switchTab('info')"><i class="fa fa-info"></i> Info</a>
         <a href class="btn block" ng-class="{active: view.tab === 'map'}" ng-click="switchTab('map')"><i class="fa fa-map-marker"></i> Map</a>
     </div>
 
-    <div class="tab" ng-switch-when="info">
+    <div class="tab" ng-show="view.tab === 'info'">
 
         <div class="info-row">
             <div class="label">Quest</div>
@@ -60,16 +60,19 @@
         </div>
 
     </div>
-    <div class="tab" ng-switch-when="map">
-        <div class="map" map></div>
+    <div class="tab" ng-show="view.tab === 'map'">
+        <div class="map" map="view.quest.map" quest="view.quest" is-open="view.tab === 'map'"></div>
 
         <div class="map-actions">
-            <a class="btn block"><i class="fa fa-arrows"></i> show all</a>
-            <a class="btn block"><i class="fa fa-crosshairs"></i> location</a>
+            <a href class="btn block" ng-click="showAll()"><i class="fa fa-arrows"></i> show all</a>
+            <a href class="btn block" ng-click="getCurrentLocation()"><i class="fa fa-crosshairs"></i> location</a>
         </div>
     </div>
 
-    <div ng-if="view.participant" modal="modal-confirm" message="Are you sure you want to quit the quest?" modal-show="view.showModal.quit" handle="hideConfirmQuit()" handle-ok="confirmQuit()"></div>
-    <div modal="modal-joined" message="Congrats! Now get out and conquer some places!" modal-show="view.showModal.join" handle="hideConfirmJoin()"></div>
+    <div ng-if="view.participant" modal="modal-confirm" message="Are you sure you want to quit the quest?" modal-show="view.showModal.quit" handle="hideModal('quit')" handle-ok="confirmQuit()"></div>
+    <div modal="modal-joined" message="Congrats! Now get out and conquer some places!" modal-show="view.showModal.join" handle-ok="hideModal('quit')"></div>
+    <div modal="modal-hit" modal-show="view.showModal.hit" handle-ok="hideModal('hit')"></div>
+    <div modal="modal-done" modal-show="view.showModal.done" handle-ok="hideModal('done')"></div>
+    <div modal="modal-miss" modal-show="view.showModal.miss" handle-ok="hideModal('miss')"></div>
 
 </div>

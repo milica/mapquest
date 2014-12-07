@@ -63,6 +63,12 @@ angular.module('mapQuestApp')
 
         };
 
+        /**
+         * Get participant info for particular quest
+         *
+         * @param questId
+         * @returns {*}
+         */
         self.getParticipant = function(questId) {
 
             var userId = self.getSessionUser();
@@ -75,15 +81,27 @@ angular.module('mapQuestApp')
                 path: [
                     {
                         id_area: 1,
-                        status: 1
+                        status: 0
                     },
                     {
                         id_area: 2,
-                        status: 1
+                        status: 0
                     },
                     {
                         id_area: 3,
-                        status: 1
+                        status: 0
+                    },
+                    {
+                        id_area: 4,
+                        status: 0
+                    },
+                    {
+                        id_area: 5,
+                        status: 0
+                    },
+                    {
+                        id_area: 6,
+                        status: 0
                     }
                 ]
             };
@@ -96,6 +114,12 @@ angular.module('mapQuestApp')
 
         };
 
+        /**
+         * Join the quest (create new participant)
+         *
+         * @param questId
+         * @returns {*}
+         */
         self.join = function(questId) {
 
             var userId = self.getSessionUser();
@@ -112,10 +136,14 @@ angular.module('mapQuestApp')
                     },
                     {
                         id_area: 2,
-                        status: 1
+                        status: 0
                     },
                     {
                         id_area: 3,
+                        status: 1
+                    },
+                    {
+                        id_area: 4,
                         status: 1
                     }
                 ]
@@ -129,6 +157,12 @@ angular.module('mapQuestApp')
 
         };
 
+        /**
+         * Quit the quest
+         *
+         * @param questId
+         * @returns {*}
+         */
         self.quit = function(questId) {
 
             var userId = self.getSessionUser();
