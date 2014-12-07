@@ -15,7 +15,10 @@ class Map {
 
 
     // ******* GETTERS ******* //
-
+    public function getId()
+    {
+        return $this->id;
+    }
     // #****** GETTERS ******# //
 
 }

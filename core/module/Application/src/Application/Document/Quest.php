@@ -69,6 +69,33 @@ class Quest {
 
 
     // ******* GETTERS ******* //
+    public function getId(){
+        return $this->id;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
+
+    public function getDesc() {
+        return $this->desc;
+    }
+
+    public function getStart() {
+        return $this->start;
+    }
+
+    public function getFinish() {
+        return  $this->finish;
+    }
+
+    public function getUser(){
+        return $this->user;
+    }
+
+    public function getMap(){
+        return $this->map;
+    }
 
     // #****** GETTERS ******# //
 
