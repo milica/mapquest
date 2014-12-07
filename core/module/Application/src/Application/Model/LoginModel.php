@@ -24,7 +24,7 @@ class LoginModel extends ApplicationModel{
         if(empty($data['username'])){ return $this->logErrors('Missing Username'); }else{$username = $data['username'];}
         if(empty($data['password'])){ return $this->logErrors('Missing Password'); }else{$password = $data['password'];}
 
-
+        $user_id = null;
         $existing_user = $this->dm->getRepository('Application\Document\User')->findOneBy(array('username' => $username));
         if(empty($existing_user)){
             $User = new User();
@@ -35,6 +35,10 @@ class LoginModel extends ApplicationModel{
                 $this->dm->persist($User);
                 $this->dm->flush();
             }
+
+            $user_id = $User->getId();
+        }else{
+            $user_id = $existing_user->getId();
         }
 
 
@@ -44,19 +48,14 @@ class LoginModel extends ApplicationModel{
         $this->auth->getAdapter()->setCredentialValue(crypt($password,$config->auth->secreet));
         $auth_result = $this->auth->authenticate();
 
-        foreach($auth_result->getMessages() as $message)
-        {
-            $messages[] = $message;
-        }
-
         if ($auth_result->isValid()) {
-            $messages = 'success';
+            $result->message = $user_id;
             $result->success = true;
             $this->auth->setStorage($this->getSessionStorage());
             $this->auth->getStorage()->write(array('username' => $username));
+        }else{
+            return $this->logErrors('Bad Creditionals');
         }
-
-        $result->message = $messages;
 
         return $result;
     }
