@@ -1,0 +1,9 @@
+{
+    "name": "mapquest",
+    "minimum-stability": "alpha",
+    "require": {
+        "doctrine/doctrine-mongo-odm-module": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master",
+        "zendframework/zendframework": "2.2.*"
+    }
+}
