@@ -221,7 +221,7 @@ angular.module('mapQuestApp')
                     .then(function() {
                         area.status = true;
                         var scoreArr = $scope.view.quest.participant_data.score.split('/');
-                        var score = scoreArr[0] + 1;
+                        var score = parseInt(scoreArr[0], 10) + 1;
                         $scope.view.quest.participant_data.score = score + '/' + scoreArr[1];
                     });
 
