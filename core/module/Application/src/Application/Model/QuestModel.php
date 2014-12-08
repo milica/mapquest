@@ -95,6 +95,23 @@ class QuestModel extends ApplicationModel{
         return $result;
     }
 
+    public function getQuestStatus($quest_o)
+    {
+
+        $start      = $quest_o->getStart();
+        $finish     = $quest_o->getFinish();
+
+        if(time() > $start){
+            $status = 'pending';
+        }elseif($start > time() && time() < $finish){
+            $status = 'running';
+        }elseif(time() > $finish){
+            $status = 'finished';
+        }
+
+        return $status;
+    }
+
     private function formatQuests($quests, $details = false)
     {
         $response = array();
@@ -122,15 +139,7 @@ class QuestModel extends ApplicationModel{
         $quest->start       = $start;
         $quest->finish      = $finish;
 
-        if(time() > $start){
-            $status = 'pending';
-        }elseif($start > time() && time() < $finish){
-            $status = 'running';
-        }elseif(time() > $finish){
-            $status = 'finished';
-        }
-
-        $quest->status = $status;
+        $quest->status = $this->getQuestStatus($quest_o);
 
         if($details){
             // TODO whoich params exactly

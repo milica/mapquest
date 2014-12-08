@@ -87,6 +87,11 @@ class AreaModel extends ApplicationModel{
         return $result;
     }
 
+    public function getAreasByMap($map_o)
+    {
+        return $this->repository->findBy(array('map.id' => $map_o->getId()));
+    }
+
     private function formatAreas($areas, $details = false)
     {
         $response = array();
