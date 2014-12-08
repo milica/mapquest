@@ -44,6 +44,12 @@ class User {
         return $this->email;
     }
 
+    public function getUsername() {
+        return $this->username;
+    }
+
+
+
     public function setUser($username,$password,$email,$firstname,$lastname) {
         $this->username  = $username;
         $this->setPassword($password);
