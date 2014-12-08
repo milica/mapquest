@@ -19,7 +19,7 @@ class Participant {
     private $score = 0;
 
     /** @ODM\Field(type="int") */
-    private $rank;
+    private $rank = 0;
 
 
     // ******* SETTERS ******* //

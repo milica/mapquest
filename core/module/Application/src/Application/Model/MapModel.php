@@ -11,11 +11,17 @@ class MapModel extends ApplicationModel{
         $this->repository = $this->dm->getRepository('Application\Document\Map');
     }
 
+    public function getMapObject($id)
+    {
+        $map = $this->repository->find($id);
+        return $map;
+    }
+
+
     public function get($id)
     {
         $result = $this->standardResult();
-        $map = $this->repository->find();
-        $result->message = $this->formatMap($map);
+        $result->message = $this->formatMap($this->getMapObject($id));
         return $result;
     }
 
@@ -29,12 +35,31 @@ class MapModel extends ApplicationModel{
 
     public function create($data)
     {
+        $result = $this->standardResult();
 
+        if(!empty($data['title'])){$title = $data['title'];}else{return $this->logErrors('Missing Title');}
+        if(!empty($data['user'])){$user = $data['user'];}else{return $this->logErrors('Missing User');}
+
+        $userMdl = new UserModel($this->dm);
+        $user = $userMdl->getUserObject($user);
+
+        if(empty($user)){return $this->logErrors('Not existing User');}
+
+        $Map = new Map();
+        if(!$Map->setTitle($title)){return $this->logErrors('Wrong value for parameter Title');}
+        if(!$Map->setUser($user)){return $this->logErrors('Wrong value for parameter  User');}
+        $this->dm->persist($Map);
+        $this->dm->flush();
+
+        $result->message = $Map->getId();
+        return $result;
     }
 
-    public function update($data)
+    public function update($id, $data)
     {
+        $result = $this->standardResult();
 
+        return $result;
     }
 
     public function delete($id)

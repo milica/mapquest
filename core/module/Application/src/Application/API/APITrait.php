@@ -11,6 +11,7 @@ use Application\Model\MapModel;
 use Application\Model\ParticipantModel;
 use Application\Model\PathModel;
 use Application\Model\QuestModel;
+use Application\Model\UserModel;
 
 /**# models #**/
 
@@ -66,6 +67,6 @@ trait APITrait{
     private function participantModel() { return new ParticipantModel($this->getEntityManager()); }
     private function pathModel() { return new PathModel($this->getEntityManager()); }
     private function questModel() { return new QuestModel($this->getEntityManager()); }
-
+    private function userModel() { return new UserModel($this->getEntityManager()); }
     /***#MODEL#***/
 }

@@ -11,6 +11,12 @@ class PathModel extends ApplicationModel{
         $this->repository = $this->dm->getRepository('Application\Document\Path');
     }
 
+    public function getPathObject($id)
+    {
+        $path = $this->repository->find($id);
+        return $path;
+    }
+
     public function get($id)
     {
 
@@ -26,7 +32,7 @@ class PathModel extends ApplicationModel{
 
     }
 
-    public function update($data)
+    public function update($id, $data)
     {
 
     }

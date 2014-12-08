@@ -19,9 +19,15 @@ class MapAPI extends AbstractRestfulController{
         return $this->standardResponse($result);
     }
 
-    public function create($data){ $this->methodNotAllowed(); }
+    public function create($data){
+        $result = $this->mapModel()->create($data);
+        return $this->standardResponse($result);
+    }
 
-    public function update($id, $data){ $this->methodNotAllowed(); }
+    public function update($id, $data){
+        $result = $this->mapModel()->update($id, $data);
+        return $this->standardResponse($result);
+    }
 
     public function delete($id = null){
         $result = $this->mapModel()->delete($id);
