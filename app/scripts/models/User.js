@@ -124,34 +124,34 @@ angular.module('mapQuestApp')
          */
         self.getUser = function(id) {
 
-            var deferred = $q.defer();
+//            var deferred = $q.defer();
+//
+//            id = (id === 'mine') ? self.getSessionUser().id : id;
+//
+//            var quests = [];
+//
+//            _.times(50, function(i) {
+//
+//                quests.push({
+//                    id: i,
+//                    name: 'Quest ' + i,
+//                    score: _.random(1, 7),
+//                    rank: _.random(1, 50)
+//                });
+//
+//            });
+//
+//            var user = {
+//                id: 1,
+//                name: 'Some User',
+//                quests: quests
+//            };
+//
+//            deferred.resolve({data: user});
+//
+//            return deferred.promise;
 
-            id = (id === 'mine') ? self.getSessionUser().id : id;
-
-            var quests = [];
-
-            _.times(50, function(i) {
-
-                quests.push({
-                    id: i,
-                    name: 'Quest ' + i,
-                    score: _.random(1, 7),
-                    rank: _.random(1, 50)
-                });
-
-            });
-
-            var user = {
-                id: 1,
-                name: 'Some User',
-                quests: quests
-            };
-
-            deferred.resolve({data: user});
-
-            return deferred.promise;
-
-            //return Api.users.get({id: id}).$promise;
+            return Api.users.get({id: id}).$promise;
         };
 
         /**

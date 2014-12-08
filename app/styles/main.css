@@ -46,45 +46,46 @@ button:active, button:focus, a:active, a:focus {
 .dropdown-menu table {
   background-color: #005826;
   margin: 0 auto;
+  border: 1px solid #003f1b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000347}}
 .dropdown-menu table:focus {
   outline: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000352}}
 .dropdown-menu table thead tr {
   background-color: #005826;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000354}}
 .dropdown-menu table thead tr th {
   color: #fff;
   font-size: 12px;
   padding: 5px 0;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000359}}
 .dropdown-menu table thead tr th .btn {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000368}}
 .dropdown-menu table tbody tr td {
   font-size: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000370}}
 .dropdown-menu table tbody tr td .btn {
   font-size: 14px;
   padding: 8px 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000373}}
 .dropdown-menu table tbody tr td .btn.active, .dropdown-menu table tbody tr td .btn:hover {
   color: #fff;
   background-color: #005826;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000379}}
 .dropdown-menu table tbody tr td .btn span.text-muted {
   opacity: 0.7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/_overrides\.scss}line{font-family:\0000384}}
 .dropdown-menu table tbody tr td .btn:disabled span {
   opacity: 0.4;
 }
@@ -676,63 +677,68 @@ select.default {
   border-bottom: 1px solid #ddd;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003313}}
+.list li p {
+  padding: 10px;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003317}}
 .list li a {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003319}}
 .list li a .status {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003322}}
 .list li a .title {
   padding: 10px;
   margin-right: 40px;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003327}}
 .list li a .fa {
   width: 40px;
   text-align: center;
   float: right;
   padding: 12px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003333}}
 .list li a .ranking {
   float: right;
   padding-top: 3px;
 }
 
 /* search box */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003342}}
 .search {
   position: relative;
   border-bottom: 1px solid #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003346}}
 .search .input,
 .search .search-icon {
   display: inline-block;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003351}}
 .search .input {
   width: 100%;
   border-top: none;
   border-bottom: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003357}}
 .search .search-icon {
   right: 2px;
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003361}}
 .search .clear-icon {
   right: 4px;
   background-color: #eee;
   -webkit-border-radius: 16px;
   border-radius: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003367}}
 .search .search-icon,
 .search .clear-icon {
   position: absolute;
@@ -745,7 +751,7 @@ select.default {
 }
 
 /* Main content extended to support simple opacity animation */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003381}}
 .content-animate.ng-enter, .content-animate.ng-leave {
   -webkit-transition: opacity linear 0.3s;
   transition: opacity linear 0.3s;
@@ -759,29 +765,29 @@ select.default {
   right: 0;
   bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003397}}
 .content-animate.ng-enter {
   opacity: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003399}}
 .content-animate.ng-enter.ng-enter-active {
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003400}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003404}}
 .content-animate.ng-leave {
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003402}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003406}}
 .content-animate.ng-leave.ng-leave-active {
   opacity: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003408}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003412}}
 .info-row {
   border-bottom: 1px solid #eee;
   min-height: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003418}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003422}}
 .info-row .label {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -789,38 +795,38 @@ select.default {
   padding: 10px;
   border-right: 1px solid #eee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003423}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003427}}
 .info-row .info {
   -webkit-box-flex: 2;
   -webkit-flex: 2;
   flex: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003425}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003429}}
 .info-row .info h2 {
   padding: 11px 10px;
   margin: 0;
   font-size: 16px;
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003431}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003435}}
 .info-row .info p {
   padding: 11px 10px;
   margin: 0;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003438}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003442}}
 .info-row .info .btn .fa.to-right {
   float: right;
   margin-top: 2px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003451}}
 .score,
 .rank {
   display: block;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003451}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003455}}
 .score.inline,
 .rank.inline {
   display: inline-block;
@@ -831,17 +837,17 @@ select.default {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003461}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003465}}
 .score {
   display: block;
   padding: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003466}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003470}}
 .rank {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003468}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003472}}
 .rank.inline {
   -webkit-border-radius: 12px;
   border-radius: 12px;
@@ -850,13 +856,13 @@ select.default {
   padding: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003476}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003480}}
 .date {
   padding: 10px;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003482}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003486}}
 .action .btn.block {
   font-size: 20px;
   padding: 16px 10px;
@@ -864,21 +870,21 @@ select.default {
   width: 90%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003492}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003496}}
 .share-actions li:first-child {
   border-bottom: 1px solid #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003495}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003499}}
 .share-actions li a {
   display: block;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003498}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003502}}
 .share-actions li a i, .share-actions li a span {
   display: inline-block;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/mapquest\.hackaton\/app\/styles\/main\.scss}line{font-family:\00003506}}
 .share-actions li a i {
   font-size: 30px;
   color: #005826;

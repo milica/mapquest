@@ -14,11 +14,13 @@ angular.module('mapQuestApp')
             post: {method: 'POST'}
         });
 
-        self.maps = $resource(apiUrl + '/maps', {id: '@id'});
+        self.map = $resource(apiUrl + '/map/:id', {id: '@id'});
 
-        self.quests = $resource(apiUrl + '/quests', {id: '@id'}, {
+        self.quests = $resource(apiUrl + '/quests/:id', {id: '@id'}, {
             create: {method: 'POST'}
         });
+
+        self.questByMap = $resource(apiUrl + '/quests-by-map/:id', {id: '@id'});
 
         self.participants = $resource(apiUrl + '/participants/:quest_id/:user_id', {quest_id: '@quest_id', user_id: '@user_id'}, {
             create: {method: 'POST'},
@@ -26,7 +28,7 @@ angular.module('mapQuestApp')
             remove: {method: 'DELETE'}
         });
 
-        self.users = $resource(apiUrl + '/users', {id: '@id'});
+        self.users = $resource(apiUrl + '/user/:id', {id: '@id'});
 
 
         return self;

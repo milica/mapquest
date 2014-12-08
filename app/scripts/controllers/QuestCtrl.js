@@ -29,6 +29,8 @@ angular.module('mapQuestApp')
                 var quest = result[0].data;
                 var participant = result[1].data;
 
+                console.log(quest);
+
                 $scope.transformAreas(quest, participant);
 
                 $scope.view.quest = quest;

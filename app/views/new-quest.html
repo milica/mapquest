@@ -1,45 +1,45 @@
 <header title="New Quest"></header>
 
-<div class="screen new-quest">
+<div class="screen new-quest" ng-class="{loading: view.loading}">
 
     <p ng-if="view.error" class="error center">{{ view.error }}</p>
 
     <form class="form" name="view.form" ng-submit="create()" novalidate>
 
-        <div class="form-row" ng-class="{'form-row-error': view.form.name.$invalid && view.form.$dirty}">
-            <input type="text" class="input" placeholder="Name" ng-model="view.quest.name" name="name" required />
+        <div class="form-row" ng-class="{'form-row-error': view.form.title.$invalid && view.form.$dirty}">
+            <input type="text" class="input" placeholder="Name" ng-model="view.quest.title" name="title" required />
         </div>
 
         <div class="form-row" ng-class="{'form-row-error': view.form.map.$invalid && view.form.$dirty}">
-            <select class="input" placeholder="Map" name="map" ng-model="view.quest.map" ng-options="map.id as map.name for map in view.maps" required>
+            <select class="input" placeholder="Map" name="map" ng-model="view.quest.map" ng-options="map.id as map.title for map in view.maps" required>
                 <option value>-- choose --</option>
             </select>
         </div>
 
-        <div class="form-row" ng-class="{'form-row-error': view.form.startDate.$invalid && view.form.$dirty}">
+        <div class="form-row" ng-class="{'form-row-error': view.form.start.$invalid && view.form.$dirty}">
             <input type="text"
                    class="input"
-                   name="startDate"
+                   name="start"
                    placeholder="Start Date"
                    ng-focus="openDatepicker('start')"
-                   ng-model="view.quest.startDate"
+                   ng-model="view.quest.start"
                    datepicker-popup
                    is-open="view.datepicker.start"
-                   max-date="view.quest.finishDate"
+                   max-date="view.quest.finish"
                    readonly
                    required />
         </div>
 
-        <div class="form-row" ng-class="{'form-row-error': view.form.finishDate.$invalid && view.form.$dirty}">
+        <div class="form-row" ng-class="{'form-row-error': view.form.finish.$invalid && view.form.$dirty}">
             <input type="text"
                    class="input"
-                   name="finishDate"
+                   name="finish"
                    placeholder="Finish Date"
                    ng-focus="openDatepicker('finish')"
-                   ng-model="view.quest.finishDate"
+                   ng-model="view.quest.finish"
                    datepicker-popup
                    is-open="view.datepicker.finish"
-                   min-date="view.quest.startDate"
+                   min-date="view.quest.start"
                    readonly
                    required />
         </div>
