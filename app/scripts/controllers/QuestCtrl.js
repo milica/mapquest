@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('mapQuestApp')
-    .controller('QuestCtrl', ['$scope', '$rootScope', '$routeParams', '$q', 'Quest', 'User', 'gMap', function ($scope, $rootScope, $routeParams, $q, Quest, User, gMap) {
+    .controller('QuestCtrl', ['$scope', '$rootScope', '$routeParams', '$q', '$route', 'Quest', 'User', 'gMap', function ($scope, $rootScope, $routeParams, $q, $route, Quest, User, gMap) {
 
         $scope.view = {};
 
         $scope.view.loading = true;
 
         $scope.view.quest = null;
-        $scope.view.participant = null;
+        $scope.view.map = null;
 
         $scope.view.tab = 'info';
 
@@ -21,20 +21,16 @@ angular.module('mapQuestApp')
             share: false
         };
 
-        $q.all([
-                Quest.getItem($routeParams.id),
-                User.getParticipant($routeParams.id)
-            ]).then(function(result) {
+        Quest.getItem($routeParams.id)
+            .then(function(result) {
 
-                var quest = result[0].data;
-                var participant = result[1].data;
+                var quest = result.data;
 
-                console.log(quest);
+                $scope.view.map = {areas: quest.areas};
 
-                $scope.transformAreas(quest, participant);
+                $scope.transformAreas(quest);
 
-                $scope.view.quest = quest;
-                $scope.view.participant = participant;
+                //$scope.view.quest = quest;
 
                 $scope.view.loading = false;
 
@@ -44,27 +40,28 @@ angular.module('mapQuestApp')
          * Transform area in order to merge participants score with loaded map
          *
          * @param quest
-         * @param participant
          */
-        $scope.transformAreas = function(quest, participant) {
+        $scope.transformAreas = function(quest) {
 
-            if (!participant) {
+            if (quest.participant) {
 
-                quest.isParticipating = false;
+                _.each(quest.areas, function(area) {
 
-            } else {
-
-                quest.isParticipating = true;
-
-                _.each(quest.map.areas, function(area) {
-
-                    var path = _.find(participant.path, function(path) {
-                        return path.id_area === area.id;
+                    console.log('path', quest.participant);
+                    var status = _.find(quest.participant.path, function(path, areaId) {
+                        return areaId === area.id;
                     });
+                    console.log('status', status);
 
-                    area.status = path.status;
+                    area.status = status;
                 });
             }
+
+            console.log(quest);
+            quest.start = new Date(quest.start * 1000);
+            quest.finish = new Date(quest.finish * 1000);
+
+            $scope.view.quest = quest;
 
         };
 
@@ -87,14 +84,9 @@ angular.module('mapQuestApp')
             $scope.view.saving = true;
 
             User.join($routeParams.id)
-                .then(function(result) {
+                .then(function() {
                     $scope.view.saving = false;
-                    $scope.view.participant = result.data;
-                    $scope.view.showModal.join = true;
-                    $scope.view.quest.isParticipating = true;
-
-                    gMap.attachListeners();
-
+                    //$route.reload();
                 });
 
         };
@@ -120,10 +112,7 @@ angular.module('mapQuestApp')
             User.quit($routeParams.id)
                 .then(function() {
                     $scope.view.saving = false;
-                    $scope.view.participant = null;
-
-                    $scope.view.quest.isParticipating = false;
-                    gMap.detachListeners();
+                    //$route.reload();
                 });
         };
 
@@ -180,11 +169,10 @@ angular.module('mapQuestApp')
 
             $scope.view.showModal.share = false;
 
-            var score = $scope.view.participant.score;
-            var rank = $scope.view.participant.rank;
-            var total = $scope.view.participant.path.length;
+            var score = $scope.view.quest.participant.score;
+            var rank = $scope.view.quest.participant.rank;
 
-            var text = 'I won ' + score + ' out of  ' + total + '! My rank is ' + rank + '! Beat me if you can!';
+            var text = 'I won ' + score + '! My rank is ' + rank + '! Beat me if you can!';
             var url;
 
             if (what === 'tw') {
@@ -201,8 +189,6 @@ angular.module('mapQuestApp')
          */
         var onAreaClickStartOff = $rootScope.$on('area-click:start', function() {
 
-            if (!$scope.view.participant) { return false; }
-
             $scope.view.loading = true;
 
             if(!$scope.$$phase) { $scope.$digest(); }
@@ -214,8 +200,6 @@ angular.module('mapQuestApp')
          */
         var onAreaClickDoneOff = $rootScope.$on('area-click:done', function() {
 
-            if (!$scope.view.participant) { return false; }
-
             $scope.view.showModal.done = true;
 
             if(!$scope.$$phase) { $scope.$digest(); }
@@ -226,8 +210,6 @@ angular.module('mapQuestApp')
          * Handle area click event end
          */
         var onAreaClickEndOff = $rootScope.$on('area-click:end', function(e, area, poly, isWithinPolygon) {
-
-            if (!$scope.view.participant) { return false; }
 
             $scope.view.loading = false;
 

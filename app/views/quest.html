@@ -13,7 +13,7 @@
             <div class="info-row">
                 <div class="label">Quest</div>
                 <div class="info">
-                    <h2>{{ view.quest.title }}</h2>
+                    <h2>{{ view.quest.title }} ({{ view.quest.map_title }})</h2>
                 </div>
             </div>
 
@@ -34,21 +34,21 @@
                 <div class="info"><span class="date">{{ view.quest.finish | date:'dd/MM/yyyy' }}</span></div>
             </div>
 
-            <div ng-if="view.participant" class="info-row">
+            <div ng-if="view.quest.participant" class="info-row">
                 <div class="label">Score</div>
                 <div class="info">
-                    <span class="score">{{ view.participant.score }} / {{ view.participant.path.length }}</span>
+                    <span class="score">{{ view.quest.participant.score }}</span>
                 </div>
             </div>
 
-            <div ng-if="view.participant" class="info-row">
+            <div ng-if="view.quest.participant" class="info-row">
                 <div class="label">Rank</div>
                 <div class="info">
-                    <span class="rank">{{ view.participant.rank }}</span>
+                    <span class="rank">{{ view.quest.participant.rank }}</span>
                 </div>
             </div>
 
-            <div ng-if="view.participant" class="info-row">
+            <div ng-if="view.quest.participant" class="info-row">
                 <div class="label">Share</div>
                 <div class="info">
                     <a href class="btn block white" ng-click="shareResult()"><i class="fa fa-share-alt"></i></a>
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="info-row" ng-if="view.quest.status !== 'finished' && view.participant">
+            <div class="info-row" ng-if="view.quest.status !== 'finished' && view.quest.participant">
                 <div class="label">Rules</div>
                 <div class="info">
                     <p>Just tap the area you claim you're in</p>
@@ -70,8 +70,8 @@
             </div>
 
             <div class="action" ng-if="view.quest.status !== 'finished'">
-                <button ng-if="!view.participant" ng-click="join()" ng-disabled="view.saving" class="btn green block">Join</button>
-                <button ng-if="view.participant" ng-click="quit()" ng-disabled="view.saving" class="btn brown block">Quit</button>
+                <button ng-if="!view.quest.participant" ng-click="join()" ng-disabled="view.saving" class="btn green block">Join</button>
+                <button ng-if="view.quest.participant" ng-click="quit()" ng-disabled="view.saving" class="btn brown block">Quit</button>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
 
     <div class="tab" ng-show="view.tab === 'map'">
 
-        <div class="map" map="view.quest.map" quest="view.quest" is-open="view.tab === 'map'"></div>
+        <div class="map" map="view.map" quest="view.quest" is-open="view.tab === 'map'"></div>
 
         <div class="map-actions">
             <a href class="btn block" ng-click="showAll()"><i class="fa fa-arrows"></i> show all</a>
@@ -89,7 +89,7 @@
     </div>
     <!-- # .tab - map -->
 
-    <div ng-if="view.participant" modal="modal-confirm" message="Are you sure you want to quit the quest?" modal-show="view.showModal.quit" handle="hideModal('quit')" handle-ok="confirmQuit()"></div>
+    <div ng-if="view.quest.participant" modal="modal-confirm" message="Are you sure you want to quit the quest?" modal-show="view.showModal.quit" handle="hideModal('quit')" handle-ok="confirmQuit()"></div>
     <div modal="modal-joined" message="Congrats! Now get out and conquer some places!" modal-show="view.showModal.join" handle-ok="hideModal('quit')"></div>
     <div modal="modal-hit" modal-show="view.showModal.hit" handle-ok="hideModal('hit')"></div>
     <div modal="modal-done" modal-show="view.showModal.done" handle-ok="hideModal('done')"></div>

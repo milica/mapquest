@@ -5,7 +5,7 @@ you search for places around you conquer them!
 
 ## Description
 
-[![mapQuest](http://mapquest.kamilica.koding.io/images//images/logo.png?raw=true "mapQuest")](http://mapquest.kamilica.koding.io/)
+[![mapQuest](http://mapquest.kamilica.koding.io/images/logo.png?raw=true "mapQuest")](http://mapquest.kamilica.koding.io/)
 
 This is simple game that promotes different kind of amusement compared to other games.
 Instead of sitting home for hours and playing on your computer or smartphone or whatever it is, you can go out and search
