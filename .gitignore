@@ -15,5 +15,6 @@ nbproject
 .settings
 composer.lock
 vendor
+app/data
 
 
