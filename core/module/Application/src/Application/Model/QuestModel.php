@@ -144,13 +144,13 @@ class QuestModel extends ApplicationModel{
         $quest->status          = $this->getQuestStatus($quest_o);
         $quest->participants    = count($ParticipantMdl->getParticipantsByQuest($quest_o->getId()));
         $quest->participant     = $ParticipantMdl->isParticipant($quest_o->getId());
-        $quest->area            = $AreaMdl->formatAreas($AreaMdl->getAreasByMap($quest_o->getMap()));
+        $quest->areas           = $AreaMdl->formatAreas($AreaMdl->getAreasByMap($quest_o->getMap()));
+        $quest->map_title       = $quest_o->getMap()->getTitle();
 
         if($details){
-            // TODO whoich params exactly
             $quest->desc = $quest_o->getDesc();
             $quest->user = $quest_o->getUser();
-            $quest->map = $quest_o->getMap();
+
         }
 
         return $quest;
