@@ -79,44 +79,6 @@ angular.module('mapQuestApp')
         };
 
         /**
-         * Get list of participants for particular quest
-         *
-         * @param questId
-         * @returns {*}
-         */
-        self.getParticipants = function(questId) {
-
-            var deferred = $q.defer();
-
-            var participants = [];
-
-            _.times(50, function(i) {
-
-                participants.push({
-                    id: i,
-                    name: 'Participant ' + i,
-                    score: _.random(1, 7),
-                    rank: _.random(1, 50),
-                    path: [
-                        {id_area: 1, status: 0},
-                        {id_area: 2, status: 0},
-                        {id_area: 3, status: 0},
-                        {id_area: 4, status: 0},
-                        {id_area: 5, status: 0},
-                        {id_area: 6, status: 0}
-                    ]
-                });
-
-            });
-
-            deferred.resolve({list: participants});
-
-            return deferred.promise;
-
-            //return Api.participants.get({quest_id: questId}).$promise;
-        };
-
-        /**
          * Get user by id
          *
          * @param id
@@ -214,38 +176,7 @@ angular.module('mapQuestApp')
          */
         self.join = function(questId) {
 
-            var userId = self.getSessionUser();
-
-            var deferred = $q.defer();
-
-            var participant = {
-                score: 1,
-                rank: 10,
-                path: [
-                    {
-                        id_area: 1,
-                        status: 1
-                    },
-                    {
-                        id_area: 2,
-                        status: 0
-                    },
-                    {
-                        id_area: 3,
-                        status: 1
-                    },
-                    {
-                        id_area: 4,
-                        status: 1
-                    }
-                ]
-            };
-
-            deferred.resolve({data: participant});
-
-            return deferred.promise;
-
-            //return Api.participants.create({quest_id: questId, user_id: userId}).$promise;
+            return Api.join.post({}, {quest: questId}).$promise;
 
         };
 

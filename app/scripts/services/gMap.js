@@ -93,7 +93,7 @@ angular.module('mapQuestApp')
 
             poly.setMap(self.map);
 
-            if (self.quest && self.quest.status === 'running' && self.quest.isParticipating) {
+            if (self.quest && self.quest.status === 'running' && self.quest.participant) {
                 self.listeners['list-' + area.id] = google.maps.event.addListener(poly, 'click', function(e) {
                     self.handleAreaClick(e, area, poly);
                 });
