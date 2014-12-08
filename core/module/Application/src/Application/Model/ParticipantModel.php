@@ -46,8 +46,6 @@ class ParticipantModel extends ApplicationModel{
         $quest = $questMdl->getQuestObject($quest);
         if(empty($quest)){return $this->logErrors('Not existing Quest');}
 
-
-
         $Participant = new Participant();
         $Participant->setUser($user);
         $Participant->setQuest($quest);
@@ -66,8 +64,8 @@ class ParticipantModel extends ApplicationModel{
     {
         $PathMdl = new PathModel($this->dm);
         $QuestMdl = new QuestModel($this->dm);
-        $quest = $QuestMdl->get($quest_o->getId());
-        foreach($quest->message->areas as $area)
+        $areas = $QuestMdl->getQuoteAreas($quest_o->getId());
+        foreach($areas as $area)
         {
             $PathMdl->create(array('area' => $area->id));
         }

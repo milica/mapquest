@@ -25,6 +25,14 @@ class QuestModel extends ApplicationModel{
         return $result;
     }
 
+    public function getQuoteAreas($id)
+    {
+        $quote = $this->getQuestObject($id);
+        $AreaMdl = new AreaModel($this->dm);
+        $areas           = $AreaMdl->getAreasByMap($quote->getMap());
+        return $areas;
+    }
+
     public function getAll()
     {
         $result = $this->standardResult();
