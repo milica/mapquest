@@ -21,11 +21,11 @@ by playing this game and visit places that otherwise they would never think of.
 ## Screenshots
 
 
-|   |   |   |   |
-|---|---|---|---|
-|  ![mapQuest login](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-login.png "mapQuest login") |  ![mapQuest quests](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-quests.png "mapQuest quests") |  ![mapQuest new quest](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-new-quest.png "mapQuest new quest") |
+|   |   |   |
+|---|---|---|
+| ![mapQuest login](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-login.png "mapQuest login") |  ![mapQuest quests](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-quests.png "mapQuest quests") |  ![mapQuest new quest](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-new-quest.png "mapQuest new quest") |
 | ![mapQuest new quest](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-new-quest-pick-the-date.png "mapQuest new quest") | ![mapQuest quest info](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-quest-info.png "mapQuest quest info") |  ![mapQuest quest map](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-quest-map.png "mapQuest quest map") | ![mapQuest maps](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-maps.png "mapQuest maps")  |
-| ![mapQuest map info](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-map-info.png "mapQuest map info")  | ![mapQuest map areas](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-map-map.png "mapQuest map areas")  |   |   |
+| ![mapQuest map info](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-map-info.png "mapQuest map info")  | ![mapQuest map areas](http://mapquest.kamilica.koding.io/images/screenshots/mapquest-map-map.png "mapQuest map areas")  |   |
 
 
 
