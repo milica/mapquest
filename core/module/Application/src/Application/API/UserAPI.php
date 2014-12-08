@@ -4,7 +4,7 @@ namespace Application\API;
 use Zend\Mvc\Controller\AbstractRestfulController;
 use Application\API\APITrait;
 
-class UsersAPI extends AbstractRestfulController{
+class UserAPI extends AbstractRestfulController{
 
     use APITrait;
 
