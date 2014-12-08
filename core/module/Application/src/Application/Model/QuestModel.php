@@ -139,21 +139,28 @@ class QuestModel extends ApplicationModel{
     {
         $quest = new \stdClass();
 
+        $user = $this->getUser();
+
         $AreaMdl = new AreaModel($this->dm);
         $ParticipantMdl = new ParticipantModel($this->dm);
 
         $start      = $quest_o->getStart();
         $finish     = $quest_o->getFinish();
 
-        $quest->id              = $quest_o->getId();
-        $quest->title           = $quest_o->getTitle();
-        $quest->start           = $start;
-        $quest->finish          = $finish;
-        $quest->status          = $this->getQuestStatus($quest_o);
-        $quest->participants    = count($ParticipantMdl->getParticipantsByQuest($quest_o->getId()));
-        $quest->participant     = $ParticipantMdl->isParticipant($quest_o->getId());
-        $quest->areas           = $AreaMdl->formatAreas($AreaMdl->getAreasByMap($quest_o->getMap()));
-        $quest->map_title       = $quest_o->getMap()->getTitle();
+        $quest->id                  = $quest_o->getId();
+        $quest->title               = $quest_o->getTitle();
+        $quest->start               = $start;
+        $quest->finish              = $finish;
+        $quest->status              = $this->getQuestStatus($quest_o);
+        $quest->participants        = count($ParticipantMdl->getParticipantsByQuest($quest_o->getId()));
+        $quest->participant         = $ParticipantMdl->isParticipant($quest_o->getId());
+        $quest->areas               = $AreaMdl->formatAreas($AreaMdl->getAreasByMap($quest_o->getMap()));
+        $quest->map_title           = $quest_o->getMap()->getTitle();
+        $quest->participant_data    = null;
+
+        if($quest->participant){
+            $quest->participant_data = $ParticipantMdl->getParticipantData($user->getId(), $quest_o->getId());
+        }
 
         if($details){
             $quest->desc = $quest_o->getDesc();

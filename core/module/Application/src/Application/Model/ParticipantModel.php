@@ -109,6 +109,8 @@ class ParticipantModel extends ApplicationModel{
         return $this->formatParticipants($participants);
     }
 
+
+
     public function getDetailedParticipantsByQuest($quest_id)
     {
         $result = $this->standardResult();
@@ -171,6 +173,25 @@ class ParticipantModel extends ApplicationModel{
         }
 
         return $participant;
+    }
+
+
+    public function getParticipantData($user_id, $quest_id)
+    {
+        $participant = new \stdClass();
+
+        $AreaMdl    = new AreaModel($this->dm);
+
+        $participant_o = $this->repository->findBy(array('quest.id' => $quest_id, 'user.id' => $user_id));
+
+        $map_o  = $participant_o->getQuest()->getMap();
+        $areas  = count($AreaMdl->getAreasByMap($map_o));
+
+        $participant->score         = $participant_o->getScore().'/'.$areas;
+        $participant->rank          = $participant_o->getRank();
+
+        return $participant;
+
     }
 
 }
