@@ -10,7 +10,7 @@ angular.module('mapQuestApp')
         $rootScope.$on('reload500', function() {
             console.log('force logout and reload');
             User.removeSessionUser();
-            $route.reload();
+            //$route.reload();
         });
 
     }]);
