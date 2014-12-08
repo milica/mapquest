@@ -22,6 +22,9 @@ class LoginAPI extends AbstractRestfulController{
     public function update($id, $data){ $this->methodNotAllowed(); }
 
     /** LOG OUT */
-    public function delete($id = null){ $this->methodNotAllowed(); }
+    public function delete($id = null){
+        $result = $this->loginModel()->LogOut();
+        return $this->standardResponse($result);
+    }
 
 }

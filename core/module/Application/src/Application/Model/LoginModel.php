@@ -61,5 +61,16 @@ class LoginModel extends ApplicationModel{
         return $result;
     }
 
+    public function LogOut()
+    {
+        if ($this->auth->hasIdentity()) {
+            $this->getSessionStorage()->forgetMe();
+            $this->auth->clearIdentity();
+            session_destroy();
+        }
+
+        //return
+    }
+
 
 }
