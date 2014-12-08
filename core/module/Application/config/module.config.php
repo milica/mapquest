@@ -84,6 +84,22 @@ return array(
                 ),
             ),
 
+            'join'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/join[/:id]',
+                    'defaults' => array('controller' => 'JoinAPI'),
+                ),
+            ),
+
+            'quit'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/quit[/:id]',
+                    'defaults' => array('controller' => 'QuitAPI'),
+                ),
+            ),
+
 
 
             'home' => array(
@@ -156,7 +172,9 @@ return array(
             'QuestAPI'                      => 'Application\API\QuestAPI',
             'MapAPI'                        => 'Application\API\MapAPI',
             'ParticipantAPI'                => 'Application\API\ParticipantAPI',
-            'QuestByMapAPI'                  => 'Application\API\QuestByMapAPI',
+            'QuestByMapAPI'                 => 'Application\API\QuestByMapAPI',
+            'JoinAPI'                       => 'Application\API\JoinAPI',
+            'QuitAPI'                       => 'Application\API\QuitAPI',
         ),
     ),
     'view_manager' => array(

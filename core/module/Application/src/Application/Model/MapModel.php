@@ -38,10 +38,8 @@ class MapModel extends ApplicationModel{
         $result = $this->standardResult();
 
         if(!empty($data['title'])){$title = $data['title'];}else{return $this->logErrors('Missing Title');}
-        if(!empty($data['user'])){$user = $data['user'];}else{return $this->logErrors('Missing User');}
 
-        $userMdl = new UserModel($this->dm);
-        $user = $userMdl->getUserObject($user);
+        $user = $this->getUser();
 
         if(empty($user)){return $this->logErrors('Not existing User');}
 

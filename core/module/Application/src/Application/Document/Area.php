@@ -18,10 +18,10 @@ class Area {
     /** @ODM\Raw */
     private $bounds;
 
-    /** @ODM\Field(type="int") */
+    /** @ODM\Field(type="float") */
     private $latitude;
 
-    /** @ODM\Field(type="int") */
+    /** @ODM\Field(type="float") */
     private $longitude;
 
     /** @ODM\ReferenceOne(targetDocument="Map") */
@@ -52,13 +52,13 @@ class Area {
     }
 
     public function setLatitude($val) {
-        if(!is_int($val)){return false;}
+        if(!is_numeric($val)){return false;}
         $this->latitude = $val;
         return true;
     }
 
     public function setLongitude($val) {
-        if(!is_int($val)){return false;}
+        if(!is_numeric($val)){return false;}
         $this->longitude = $val;
         return true;
     }
