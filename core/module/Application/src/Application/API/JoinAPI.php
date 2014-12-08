@@ -12,11 +12,12 @@ class JoinAPI extends AbstractRestfulController{
 
     public function get($id){$this->methodNotAllowed();}
 
-    public function create($data){$this->methodNotAllowed();}
-
-    public function update($id, $data){
-
+    public function create($data){
+        $result = $this->participantModel()->create($data);
+        return $this->standardResponse($result);
     }
+
+    public function update($id, $data){$this->methodNotAllowed();}
 
     public function delete($id = null){$this->methodNotAllowed();}
 

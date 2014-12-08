@@ -12,11 +12,13 @@ class QuitAPI extends AbstractRestfulController{
 
     public function get($id){$this->methodNotAllowed();}
 
-    public function create($data){
+    public function create($data){$this->methodNotAllowed();}
+
+    public function update($id, $data){
+        $result = $this->participantModel()->delete($id);
+        return $this->standardResponse($result);
 
     }
-
-    public function update($id, $data){$this->methodNotAllowed();}
 
     public function delete($id = null){$this->methodNotAllowed();}
 
