@@ -110,7 +110,7 @@ angular.module('mapQuestApp')
             User.quit($routeParams.id)
                 .then(function() {
                     $scope.view.saving = false;
-                    //$route.reload();
+                    $route.reload();
                 });
         };
 
@@ -218,9 +218,11 @@ angular.module('mapQuestApp')
                 gMap.markAsDone(area, poly);
 
                 Quest.markAreaAsDone($routeParams.id, area.id)
-                    .then(function(result) {
-                        area.status = 1;
-                        //$scope.view.participant = result.data;
+                    .then(function() {
+                        area.status = true;
+                        var scoreArr = $scope.view.quest.participant_data.score.split('/');
+                        var score = scoreArr[0] + 1;
+                        $scope.view.quest.participant_data.score = score + '/' + scoreArr[1];
                     });
 
             } else {

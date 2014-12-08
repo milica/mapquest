@@ -32,6 +32,14 @@ angular.module('mapQuestApp')
             post: {method: 'POST'}
         });
 
+        self.quit = $resource(apiUrl + '/quit/:id', {id: '@id'}, {
+            update: {method: 'PUT'}
+        });
+
+        self.path = $resource(apiUrl + '/path/:id', {id: '@id'}, {
+            update: {method: 'PUT'}
+        });
+
         self.users = $resource(apiUrl + '/user/:id', {id: '@id'});
 
 

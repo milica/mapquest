@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="action" ng-if="view.quest.status !== 'finished'">
+            <div class="action" ng-if="!view.loading && view.quest.status !== 'finished'">
                 <button ng-if="!view.quest.participant" ng-click="join()" ng-disabled="view.saving" class="btn green block">Join</button>
                 <button ng-if="view.quest.participant" ng-click="quit()" ng-disabled="view.saving" class="btn brown block">Quit</button>
             </div>

@@ -1,4 +1,4 @@
-<header title="{{ view.participant.name }}"></header>
+<header title="{{ view.participant.username }}"></header>
 
 <div class="screen participant" ng-class="{loading: view.loading}">
 
@@ -8,24 +8,24 @@
             <div class="info-row">
                 <div class="label">Participant</div>
                 <div class="info">
-                    <h2>{{ view.participant.name }}</h2>
+                    <h2>{{ view.participant.username }}</h2>
                 </div>
             </div>
 
             <div class="info-row">
-                <div class="label"><strong>Quests completed</strong></div>
+                <div class="label"><strong>Quests</strong></div>
             </div>
         </div>
 
         <ul class="list">
             <li ng-repeat="quest in view.participant.quests">
-                <a ng-href="#/quest/{{ quest.id }}">
+                <a ng-href="#/quest/{{ quest.quest_id }}">
                     <i class="fa fa-chevron-right"></i>
                     <div class="ranking">
-                        <span class="score inline">{{ quest.score }} / {{ view.participant.quests.length }}</span>
+                        <span class="score inline">{{ quest.score }}</span>
                         <span class="rank inline">{{ quest.rank }}</span>
                     </div>
-                    <span class="title">{{ quest.name }}</span>
+                    <span class="title">{{ quest.quest_name }}</span>
                 </a>
             </li>
         </ul>
