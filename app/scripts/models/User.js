@@ -17,6 +17,17 @@ angular.module('mapQuestApp')
         };
 
         /**
+         * Remove current session user
+         *
+         * @returns {*}
+         */
+        self.removeSessionUser = function () {
+
+            return localStorageService.remove('user');
+
+        };
+
+        /**
          * Get current session user
          */
         self.getSessionUser = function () {
@@ -44,8 +55,7 @@ angular.module('mapQuestApp')
             Api.login.post({}, {username: username, password: password}).$promise
                 .then(function(result) {
 
-                    console.log(result);
-                    user.id = result.id;
+                    user.id = result.user_id;
 
                     self.setSessionUser(user);
 
@@ -66,15 +76,7 @@ angular.module('mapQuestApp')
          */
         self.logout = function() {
 
-            localStorageService.remove('user');
-
-            var deferred = $q.defer();
-
-            deferred.resolve();
-
-            return deferred.promise;
-
-            //return Api.logout.post().$promise;
+            return Api.login.delete().$promise;
 
         };
 

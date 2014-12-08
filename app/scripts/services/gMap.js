@@ -294,7 +294,6 @@ angular.module('mapQuestApp')
                 navigator.geolocation.getCurrentPosition(function(position) {
 
                     var p = self.getLatLng(position.coords.latitude, position.coords.longitude);
-                    var icon = 'images/marker.png';
 
                     if (self.currentPosition) {
                         self.currentPosition.setMap(self.map);
@@ -304,7 +303,6 @@ angular.module('mapQuestApp')
                         position: p,
                         map: self.map,
                         flat: true,
-//                        icon: icon
                         icon: {
                             path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
                             scale: 5,

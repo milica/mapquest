@@ -7,11 +7,8 @@ angular.module('mapQuestApp')
         var apiUrl = 'api';
 
         self.login = $resource(apiUrl + '/login', {}, {
-            post: {method: 'POST'}
-        });
-
-        self.logout = $resource(apiUrl + '/logout', {}, {
-            post: {method: 'POST'}
+            post: {method: 'POST'},
+            'delete': {method: 'DELETE'}
         });
 
         self.map = $resource(apiUrl + '/map/:id', {id: '@id'});

@@ -21,6 +21,10 @@ angular.module('mapQuestApp')
             responseError: function(rejection) {
                 var error = (_.isEmpty(rejection.data.message)) ? {message: 'An error occurred while attempting to retrieve response from ' + rejection.config.url} : rejection.data.message;
                 $rootScope.$broadcast('httpError', error);
+                console.log(rejection);
+                if (rejection.status === 500) {
+                    $rootScope.$broadcast('reload500', true);
+                }
                 return $q.reject(rejection);
             }
 
