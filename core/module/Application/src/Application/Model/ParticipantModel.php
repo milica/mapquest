@@ -169,6 +169,7 @@ class ParticipantModel extends ApplicationModel{
 
         $participant->user          = $participant_o->getUser()->getUsername();
         $participant->user_id       = $participant_o->getUser()->getId();
+        $participant->quest_id      = $participant_o->getQuest()->getId();
         $participant->quest_name    = $participant_o->getQuest()->getTitle();
         $participant->status        = $QuestMdl->getQuestStatus($participant_o->getQuest());
         $participant->score         = $participant_o->getScore().'/'.$areas;
