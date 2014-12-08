@@ -61,6 +61,31 @@ class PathModel extends ApplicationModel{
 
     }
 
+    public function deletePathByUserAndQuest($quest_id)
+    {
+        $user = $this->getUser();
+
+        $QuestMdl = new QuestModel($this->dm);
+        $AreaMdl = new AreaModel($this->dm);
+
+        $quest = $QuestMdl->getQuestObject($quest_id);
+        $areas = $AreaMdl->getAreasByMap($quest->getMap());
+
+        foreach($areas as $area)
+        {
+            $Path = $this->repository->findOneBy(array('participant.id' => $user->getId(), 'area.id' => $area->getId()));
+            if(!empty($Path))
+            {
+                $this->dm->remove($Path);
+                $this->dm->flush();
+
+            }
+
+        }
+
+
+    }
+
     public function getPathsByQuest($quest_id)
     {
         $user = $this->getUser();

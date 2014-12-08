@@ -82,12 +82,18 @@ class ParticipantModel extends ApplicationModel{
 
         $user = $this->getUser();
 
-        $quest = $this->repository->findBy(array('quest.id' => $quest_id, 'user.id' => $user->getId()));
+        $quest = $this->repository->findOneBy(array('quest.id' => $quest_id, 'user.id' => $user->getId()));
 
         if(empty($quest)){return $this->logErrors('Participant Does not exist');}
 
+        $PathMdl = new PathModel($this->dm);
+        $PathMdl->deletePathByUserAndQuest($quest_id);
+
         $this->dm->remove($quest);
         $this->dm->flush();
+
+
+
         $result->message = 'Success';
 
         return $result;
@@ -162,6 +168,7 @@ class ParticipantModel extends ApplicationModel{
         $areas  = count($AreaMdl->getAreasByMap($map_o));
 
         $participant->user          = $participant_o->getUser()->getUsername();
+        $participant->user_id       = $participant_o->getUser()->getId();
         $participant->quest_name    = $participant_o->getQuest()->getTitle();
         $participant->status        = $QuestMdl->getQuestStatus($participant_o->getQuest());
         $participant->score         = $participant_o->getScore().'/'.$areas;
