@@ -32,7 +32,7 @@ class ParticipantModel extends ApplicationModel{
 
     public function create($data)
     {
-
+        $data['quest_id'];
     }
 
     public function update($id, $data)
@@ -44,6 +44,8 @@ class ParticipantModel extends ApplicationModel{
     {
 
     }
+
+
 
     public function getParticipantByUser($user_id)
     {
