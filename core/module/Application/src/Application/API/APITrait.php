@@ -50,7 +50,6 @@ trait APITrait{
 
     private function standardResponse($result)
     {
-
         if($result->success){
             return new JsonModel(array("data" => $result->message));
         }else{
@@ -64,7 +63,7 @@ trait APITrait{
     private function areaModel() { return new AreaModel($this->getEntityManager()); }
     private function loginModel() { return new LoginModel($this->getEntityManager(), $this->getAuthAdapter()); }
     private function mapModel() { return new MapModel($this->getEntityManager()); }
-    private function participantModel() { return new ParticipantModel($this->getEntityManager()); }
+    private function participantModel() {return new ParticipantModel($this->getEntityManager()); }
     private function pathModel() { return new PathModel($this->getEntityManager()); }
     private function questModel() { return new QuestModel($this->getEntityManager()); }
     private function userModel() { return new UserModel($this->getEntityManager()); }
