@@ -129,7 +129,7 @@ class ParticipantModel extends ApplicationModel{
 
         $participant = $this->repository->findBy(array('quest.id' => $quest_id, 'user.id' => $user_id));
 
-        if(count($participant) == 0){
+        if(!empty($participant)){
             return $PathMdl->getPathsByQuest($quest_id);
         }
 
