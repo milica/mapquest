@@ -35,6 +35,14 @@ return array(
                 ),
             ),
 
+            'user'=> array(
+                'type' => 'segment',
+                'options' => array(
+                    'route'    => '/user[/:id]',
+                    'defaults' => array('controller' => 'UserAPI'),
+                ),
+            ),
+
             'login'=> array(
                 'type' => 'segment',
                 'options' => array(
@@ -173,6 +181,7 @@ return array(
             'MapAPI'                        => 'Application\API\MapAPI',
             'ParticipantAPI'                => 'Application\API\ParticipantAPI',
             'QuestByMapAPI'                 => 'Application\API\QuestByMapAPI',
+            'UserAPI'                       => 'Application\API\UserAPI',
             'JoinAPI'                       => 'Application\API\JoinAPI',
             'QuitAPI'                       => 'Application\API\QuitAPI',
         ),
