@@ -19,7 +19,7 @@ angular.module('mapQuestApp')
             },
 
             responseError: function(rejection) {
-                var error = (_.isEmpty(rejection.data.message)) ? {message: 'An error occurred while attempting to retrieve response from ' + rejection.config.url} : rejection.data.message;
+                var error = (_.isEmpty(rejection.data.message)) ? {message: 'An error occurred! Try to logout from the upper right menu.'} : rejection.data.message;
                 $rootScope.$broadcast('httpError', error);
                 console.log(rejection);
                 if (rejection.status === 500) {

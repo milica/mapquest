@@ -76,7 +76,14 @@ angular.module('mapQuestApp')
          */
         self.logout = function() {
 
-            return Api.login.delete().$promise;
+            localStorageService.remove('user');
+
+            var deferred = $q.defer();
+
+            deferred.resolve();
+
+            return deferred.promise;
+            //return Api.login.delete().$promise;
 
         };
 
