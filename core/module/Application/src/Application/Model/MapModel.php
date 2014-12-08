@@ -93,10 +93,13 @@ class MapModel extends ApplicationModel{
     {
         $map = new \stdClass();
 
-        $AreaMdl = new AreaModel($this->dm);
+        $AreaMdl    = new AreaModel($this->dm);
+        $QuestMdl   = new QuestModel($this->dm);
+        $quests     = $QuestMdl->getQuestsByMap($map_o->getId());
 
         $map->id        = $map_o->getId();
         $map->title     = $map_o->getTitle();
+        $map->quests    = count($quests->message);
         $map->areas     = $AreaMdl->formatAreas($AreaMdl->getAreasByMap($map_o));
 
         if($details){
