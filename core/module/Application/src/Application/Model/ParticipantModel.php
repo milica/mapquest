@@ -67,7 +67,7 @@ class ParticipantModel extends ApplicationModel{
         $areas = $QuestMdl->getQuoteAreas($quest_o->getId());
         foreach($areas as $area)
         {
-            $PathMdl->create(array('area' => $area->id));
+            $PathMdl->create(array('area' => $area->getId()));
         }
     }
 
