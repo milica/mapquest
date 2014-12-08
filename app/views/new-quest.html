@@ -6,12 +6,12 @@
 
     <form class="form" name="view.form" ng-submit="create()" novalidate>
 
-        <div class="form-row" ng-class="{'form-row-error': view.form.name.$invalid && view.form.$dirty}">
-            <input type="text" class="input" placeholder="Name" ng-model="view.quest.name" name="name" required />
+        <div class="form-row" ng-class="{'form-row-error': view.form.title.$invalid && view.form.$dirty}">
+            <input type="text" class="input" placeholder="Name" ng-model="view.quest.title" name="title" required />
         </div>
 
         <div class="form-row" ng-class="{'form-row-error': view.form.map.$invalid && view.form.$dirty}">
-            <select class="input" placeholder="Map" name="map" ng-model="view.quest.map" ng-options="map.id as map.name for map in view.maps" required>
+            <select class="input" placeholder="Map" name="map" ng-model="view.quest.map" ng-options="map.id as map.title for map in view.maps" required>
                 <option value>-- choose --</option>
             </select>
         </div>

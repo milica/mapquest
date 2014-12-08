@@ -20,7 +20,7 @@
         </div>
         <div class="other-filters">
             <div class="map-filter">
-                <select class="input" ng-class="{default: !view.mapId}" placeholder="Map" name="map" ng-model="view.mapId" ng-change="changeMap()" ng-options="map.id as map.name for map in view.maps" required>
+                <select class="input" ng-class="{default: !view.mapId}" placeholder="Map" name="map" ng-model="view.mapId" ng-change="changeMap()" ng-options="map.id as map.title for map in view.maps" required>
                     <option value>- map -</option>
                 </select>
             </div>

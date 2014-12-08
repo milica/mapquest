@@ -6,7 +6,7 @@ angular.module('mapQuestApp')
         $scope.view = {};
 
         $scope.view.loading = true;
-        $scope.view.mapId = $routeParams.map ? parseInt($routeParams.map, 10) : null;
+        $scope.view.mapId = $routeParams.map || null;
 
         var quests = [];
 
@@ -16,7 +16,7 @@ angular.module('mapQuestApp')
                 Quest.getList($routeParams.map)
             ]).then(function(result) {
 
-                $scope.view.maps = result[0].list;
+                $scope.view.maps = result[0].data;
 
                 quests = result[1].list;
 

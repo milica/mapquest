@@ -20,7 +20,7 @@ by playing this game and visit places that otherwise they would never think of.
 
 ## Screenshots
 
-
+![mapQuest](http://d.pr/i/tJMA/5HFGP5S1 "mapQuest")
 
 ## APIs used
 

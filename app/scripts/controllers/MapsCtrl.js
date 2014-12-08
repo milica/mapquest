@@ -12,7 +12,7 @@ angular.module('mapQuestApp')
         Map.getList()
             .then(function(result) {
 
-                $scope.view.maps = result.list;
+                $scope.view.maps = result.data;
                 $scope.view.loading = false;
 
             });

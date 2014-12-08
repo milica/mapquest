@@ -11,7 +11,7 @@ angular.module('mapQuestApp')
         $scope.view.quest = {};
 
         if ($routeParams.map) {
-            $scope.view.quest.map = parseInt($routeParams.map, 10);
+            $scope.view.quest.map = $routeParams.map;
         }
 
         $scope.view.datepicker = {
@@ -32,7 +32,7 @@ angular.module('mapQuestApp')
 
         Map.getList()
             .then(function(result) {
-                $scope.view.maps = result.list;
+                $scope.view.maps = result.data;
                 $scope.view.loading = true;
             });
 
@@ -54,7 +54,7 @@ angular.module('mapQuestApp')
             $scope.view.loading = true;
 
             var quest = {};
-            quest.name = $scope.view.quest.name;
+            quest.title = $scope.view.quest.title;
             quest.startDate = $filter('date')($scope.view.quest.startDate, 'yyyy-MM-dd');
             quest.finishDate = $filter('date')($scope.view.quest.finishDate, 'yyyy-MM-dd');
             quest.id_map = $scope.view.quest.map.id;

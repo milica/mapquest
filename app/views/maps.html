@@ -3,7 +3,7 @@
 <div class="screen maps" ng-class="{loading: view.loading}">
 
     <div class="search">
-        <input type="text" type="text" placeholder="Search..." class="input" ng-model="view.search.name" />
+        <input type="text" type="text" placeholder="Search..." class="input" ng-model="view.search.title" />
         <span class="search-icon"><i class="fa fa-search"></i></span>
         <a href ng-show="view.search" class="clear-icon" ng-click="clearSearch()"><i class="fa fa-times"></i></a>
     </div>
@@ -12,7 +12,7 @@
         <li ng-repeat="map in view.maps | filter:view.search">
             <a ng-href="#/map/{{ map.id }}">
                 <i class="fa fa-chevron-right"></i>
-                <span class="title">{{ map.name }}</span>
+                <span class="title">{{ map.title }}</span>
             </a>
         </li>
     </ul>
