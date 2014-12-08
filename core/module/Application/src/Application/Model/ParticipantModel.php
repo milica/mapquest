@@ -34,7 +34,7 @@ class ParticipantModel extends ApplicationModel{
     {
         $result = $this->standardResult();
 
-        if(!empty($data['quest_id'])){$quest = $data['quest_id'];}else{return $this->logErrors('Missing Quest ID');}
+        if(!empty($data['quest'])){$quest = $data['quest'];}else{return $this->logErrors('Missing Quest ID');}
 
         $questMdl = new QuestModel($this->dm);
         $quest = $questMdl->getQuestObject($quest);
