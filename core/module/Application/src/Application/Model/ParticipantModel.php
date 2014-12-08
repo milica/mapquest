@@ -59,10 +59,13 @@ class ParticipantModel extends ApplicationModel{
 
     }
 
-    public function delete($id)
+    public function delete($quest_id)
     {
         $result = $this->standardResult();
-        $quest = $this->repository->find($id);
+
+        $user = $this->getUser();
+
+        $quest = $this->repository->findBy(array('quest.id' => $quest_id, 'user.id' => $user->getId()));
 
         if(empty($quest)){return $this->logErrors('Participant Does not exist');}
 
