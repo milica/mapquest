@@ -182,7 +182,7 @@ class ParticipantModel extends ApplicationModel{
 
         $AreaMdl    = new AreaModel($this->dm);
 
-        $participant_o = $this->repository->findBy(array('quest.id' => $quest_id, 'user.id' => $user_id));
+        $participant_o = $this->repository->findOneBy(array('quest.id' => $quest_id, 'user.id' => $user_id));
 
         $map_o  = $participant_o->getQuest()->getMap();
         $areas  = count($AreaMdl->getAreasByMap($map_o));

@@ -158,7 +158,7 @@ class QuestModel extends ApplicationModel{
         $quest->map_title           = $quest_o->getMap()->getTitle();
         $quest->participant_data    = null;
 
-        if($quest->participant){
+        if(!empty($quest->participant)){
             $quest->participant_data = $ParticipantMdl->getParticipantData($user->getId(), $quest_o->getId());
         }
 
