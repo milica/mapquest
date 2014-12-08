@@ -1,6 +1,7 @@
 <?php
 namespace Application\Model;
 use Application\Document\Participant;
+use Application\Document\Path;
 
 class ParticipantModel extends ApplicationModel{
 
@@ -36,6 +37,9 @@ class ParticipantModel extends ApplicationModel{
 
         if(!empty($data['quest'])){$quest = $data['quest'];}else{return $this->logErrors('Missing Quest ID');}
 
+        $existing = $this->isParticipant($quest);
+        if($existing){return $this->logErrors('User already joined');}
+
         $questMdl = new QuestModel($this->dm);
         $quest = $questMdl->getQuestObject($quest);
         if(empty($quest)){return $this->logErrors('Not existing Quest');}
@@ -49,9 +53,22 @@ class ParticipantModel extends ApplicationModel{
         $this->dm->persist($Participant);
         $this->dm->flush();
 
+        $this->createPaths($quest);
+
         $result->message = $Participant->getId();
 
         return $result;
+    }
+
+    private function createPaths($quest_o)
+    {
+        $PathMdl = new PathModel($this->dm);
+        $QuestMdl = new QuestModel($this->dm);
+        $quest = $QuestMdl->get($quest_o->getId());
+        foreach($quest->message->area as $area)
+        {
+            $PathMdl->create(array('area' => $area->id));
+        }
     }
 
     public function update($id, $data)
@@ -92,6 +109,21 @@ class ParticipantModel extends ApplicationModel{
 
 
         return $this->formatParticipants($participants);
+    }
+
+    public function isParticipant($quest_id)
+    {
+        $PathMdl = new PathModel($this->dm);
+
+        $user       = $this->getUser();
+        $user_id    = $user->getId();
+        $participant = $this->repository->findOneBy(array('quest.id' => $quest_id, 'user.id' => $user_id));
+
+        if(empty($participant)){
+            return null;
+        }else{
+            return $PathMdl->getPathsByQuest($quest_id);
+        }
     }
 
     private function formatParticipants($participants, $details = false)

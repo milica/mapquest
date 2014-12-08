@@ -29,8 +29,27 @@ class PathModel extends ApplicationModel{
 
     public function create($data)
     {
+        $result = $this->standardResult();
 
+        $AreaMdl = new AreaModel($this->dm);
+
+        $area = $AreaMdl->getAreaObject($data['area']);
+
+        $Path = new Path();
+        $Path->setArea($area);
+        $Path->setParticipant($this->getUser());
+        $Path->setStatus(false);
+
+        $this->dm->persist($Path);
+        $this->dm->flush();
+
+        $result->message = $Path->getId();
+
+        return $result;
     }
+
+
+
 
     public function update($id, $data)
     {
@@ -41,5 +60,29 @@ class PathModel extends ApplicationModel{
     {
 
     }
+
+    public function getPathsByQuest($quest_id)
+    {
+        $user = $this->getUser();
+
+        $QuestMdl = new QuestModel($this->dm);
+        $AreaMdl = new AreaModel($this->dm);
+
+        $quest = $QuestMdl->getQuestObject($quest_id);
+        $areas = $AreaMdl->getAreasByMap($quest->getMap());
+
+        $statuses = array();
+
+
+        foreach($areas as $area)
+        {
+            $status = $this->repository->findOneBy(array('participant.id' => $user->getId(), 'area.id' => $area->getId()));
+            $statuses[$area->getId()] = $status->getStatus();
+        }
+
+
+        return $statuses;
+    }
+
 
 }
