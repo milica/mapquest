@@ -82,16 +82,31 @@ class ParticipantModel extends ApplicationModel{
     {
         $participants = $this->repository->findBy(array('user.id' => $user_id));
 
-        $participant = array();
+        return $this->formatParticipants($participants);
 
-        if(!empty($participants)){
-            foreach($participants as $participant_o){
-                $participant[] = formatParticipant($participant_o);
+    }
+
+    public function getParticipantsByQuest($quest_id)
+    {
+        $participants = $this->repository->findBy(array('quest.id' => $quest_id));
+
+
+        return $this->formatParticipants($participants);
+    }
+
+    private function formatParticipants($participants, $details = false)
+    {
+        $response = array();
+
+        if(count($participants) > 0)
+        {
+            foreach($participants as $participant_o)
+            {
+                $response[] = $this->formatParticipant($participant_o, $details);
             }
         }
 
-        return $participant;
-
+        return $response;
     }
 
     private function formatParticipant($participant_o, $details = false)
