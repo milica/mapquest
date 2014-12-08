@@ -131,6 +131,8 @@ class QuestModel extends ApplicationModel{
     {
         $quest = new \stdClass();
 
+        $AreaMdl = new AreaModel($this->dm);
+
         $start      = $quest_o->getStart();
         $finish     = $quest_o->getFinish();
 
@@ -138,8 +140,9 @@ class QuestModel extends ApplicationModel{
         $quest->title       = $quest_o->getTitle();
         $quest->start       = $start;
         $quest->finish      = $finish;
+        $quest->status      = $this->getQuestStatus($quest_o);
+        $quest->area        = $AreaMdl->formatAreas($AreaMdl->getAreasByMap($quest_o->getMap()));
 
-        $quest->status = $this->getQuestStatus($quest_o);
 
         if($details){
             // TODO whoich params exactly

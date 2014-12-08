@@ -39,7 +39,7 @@ class AreaModel extends ApplicationModel{
         if(!empty($data['title'])){$title = $data['title'];}
         if(!empty($data['color'])){$color = $data['color'];}
         if(!empty($data['bounds'])){$bounds = $data['bounds'];}
-        if(!empty($data['latitude'])){$latitude = $data['color'];}
+        if(!empty($data['latitude'])){$latitude = $data['latitude'];}
         if(!empty($data['longitude'])){$longitude = $data['longitude'];}
         if(!empty($data['map'])){$map = $data['map'];}
 
@@ -92,7 +92,7 @@ class AreaModel extends ApplicationModel{
         return $this->repository->findBy(array('map.id' => $map_o->getId()));
     }
 
-    private function formatAreas($areas, $details = false)
+    public function formatAreas($areas, $details = false)
     {
         $response = array();
 
