@@ -47,8 +47,8 @@ class QuestModel extends ApplicationModel{
 
         if(!empty($data['title'])){$title = $data['title'];}else{return $this->logErrors('Missing Title');}
         if(!empty($data['description'])){$description = $data['description'];}else{$description = null;}
-        if(!empty($data['start'])){$start  = $data['start'];}else{return $this->logErrors('Missing Start Time');}
-        if(!empty($data['finish'])){$finish = $data['finish'];}else{return $this->logErrors('Missing Finish Time');}
+        if(!empty($data['start'])){$start  = strtotime($data['start']);}else{return $this->logErrors('Missing Start Time');}
+        if(!empty($data['finish'])){$finish = strtotime($data['finish']);}else{return $this->logErrors('Missing Finish Time');}
         if(!empty($data['map'])){$map = $data['map'];}else{return $this->logErrors('Missing Map');}
 
         $mapMdl = new MapModel($this->dm);
