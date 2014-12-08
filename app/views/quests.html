@@ -25,7 +25,7 @@
                 </select>
             </div>
             <div class="search">
-                <input type="text" type="text" placeholder="Search..." class="input" ng-model="view.search.name" />
+                <input type="text" type="text" placeholder="Search..." class="input" ng-model="view.search.title" />
                 <span class="search-icon"><i class="fa fa-search"></i></span>
                 <a href ng-show="view.search" class="clear-icon" ng-click="clearSearch()"><i class="fa fa-times"></i></a>
             </div>
@@ -37,7 +37,7 @@
             <a ng-href="#/quest/{{ quest.id }}">
                 <i class="fa fa-chevron-right"></i>
                 <span class="status {{ quest.status }}"><i class="fa fa-circle"></i></span>
-                <span class="title">{{ quest.name }}</span>
+                <span class="title">{{ quest.title }}</span>
             </a>
         </li>
     </ul>

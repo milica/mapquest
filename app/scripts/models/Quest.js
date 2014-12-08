@@ -157,14 +157,16 @@ angular.module('mapQuestApp')
          */
         self.create = function(quest) {
 
+//            console.log(quest);
+//            var deferred = $q.defer();
+//
+//            deferred.resolve();
+//
+//            return deferred.promise;
+
             console.log(quest);
-            var deferred = $q.defer();
 
-            deferred.resolve();
-
-            return deferred.promise;
-
-            //return Api.quests.create().$promise;
+            return Api.quests.create({}, quest).$promise;
 
         };
 
