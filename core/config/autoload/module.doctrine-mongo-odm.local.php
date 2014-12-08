@@ -3,11 +3,11 @@ return array(
     'doctrine' => array(
         'connection' => array(
             'odm_default' => array(
-                'server'           => 'localhost',
-                'port'             => '27017',
+                'server'           => 'ds063150.mongolab.com',
+                'port'             => '63150',
                 'connectionString' => null,
-                'user'             => '',
-                'password'         => '',
+                'user'             => 'root',
+                'password'         => 'root',
                 'dbname'           => 'mapquest',
                 'options'          => array()
             ),
