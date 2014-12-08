@@ -14,7 +14,11 @@ class PathAPI extends AbstractRestfulController{
 
     public function create($data){ $this->methodNotAllowed(); }
 
-    public function update($id, $data){ $this->methodNotAllowed(); }
+    public function update($id, $data)
+    {
+        $result = $this->pathModel()->update($id, $data);
+        return $this->standardResponse($result);
+    }
 
     public function delete($id = null){ $this->methodNotAllowed(); }
 
