@@ -338,22 +338,6 @@ angular.module('mapQuestApp')
         };
 
         /**
-         * Attach click event listeners for the polies
-         */
-        self.attachListeners = function() {
-
-            _.each(self.polies, function(poly, i) {
-
-                var area = self.areas[i];
-
-                self.listeners['list-' + area.id] = google.maps.event.addListener(poly, 'click', function(e) {
-                    self.handleAreaClick(e, area, poly);
-                });
-            });
-
-        };
-
-        /**
          * Map detach functionality
          */
         self.detachListeners = function() {

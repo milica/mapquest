@@ -84,19 +84,9 @@ angular.module('mapQuestApp')
             $scope.view.saving = true;
 
             User.join($routeParams.id)
-                .then(function(result) {
-
-                    console.log(result);
-
-                    $route.reload();
-
-//                    $scope.view.saving = false;
-//                    $scope.view.quest.participant = result.data;
-//                    $scope.view.showModal.join = true;
-//                    $scope.view.quest.isParticipating = true;
-//
-//                    gMap.attachListeners();
-
+                .then(function() {
+                    $scope.view.saving = false;
+                    //$route.reload();
                 });
 
         };
@@ -122,10 +112,7 @@ angular.module('mapQuestApp')
             User.quit($routeParams.id)
                 .then(function() {
                     $scope.view.saving = false;
-                    $scope.view.quest.participant = null;
-
-                    $scope.view.quest.isParticipating = false;
-                    gMap.detachListeners();
+                    //$route.reload();
                 });
         };
 
