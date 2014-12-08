@@ -18,7 +18,7 @@ angular.module('mapQuestApp')
 
                 $scope.view.maps = result[0].data;
 
-                quests = result[1].list;
+                quests = result[1].data;
 
                 $scope.filter('all');
 
@@ -70,7 +70,9 @@ angular.module('mapQuestApp')
          */
         $scope.changeMap = function() {
 
-            $location.path('/quests/' + $scope.view.mapId);
+            var id = $scope.view.mapId || '';
+
+            $location.path('/quests/' + id);
 
         };
 

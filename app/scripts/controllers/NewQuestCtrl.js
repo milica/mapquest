@@ -57,7 +57,7 @@ angular.module('mapQuestApp')
             quest.title = $scope.view.quest.title;
             quest.start = $filter('date')($scope.view.quest.start, 'yyyy-MM-dd');
             quest.finish = $filter('date')($scope.view.quest.finish, 'yyyy-MM-dd');
-            quest.map = $scope.view.quest.map.id;
+            quest.map = $scope.view.quest.map;
 
             Quest.create(quest)
                 .then(function() {

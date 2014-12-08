@@ -310,6 +310,10 @@ body {
 .list {
   li {
     border-bottom: 1px solid #ddd;
+    p {
+      padding: 10px;
+      margin: 0;
+    }
     a {
       display: block;
       .status {

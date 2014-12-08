@@ -21,7 +21,7 @@
         <div class="other-filters">
             <div class="map-filter">
                 <select class="input" ng-class="{default: !view.mapId}" placeholder="Map" name="map" ng-model="view.mapId" ng-change="changeMap()" ng-options="map.id as map.title for map in view.maps" required>
-                    <option value>- map -</option>
+                    <option value>- all -</option>
                 </select>
             </div>
             <div class="search">
@@ -40,6 +40,8 @@
                 <span class="title">{{ quest.title }}</span>
             </a>
         </li>
+        <li ng-if="(view.quests | filter:view.search).length === 0"><p>Empty result</p></li>
     </ul>
+
 
 </div>
