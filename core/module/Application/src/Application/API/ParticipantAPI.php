@@ -10,7 +10,10 @@ class ParticipantAPI extends AbstractRestfulController{
 
     public function getList(){$this->methodNotAllowed();}
 
-    public function get($id){$this->methodNotAllowed(); }
+    public function get($id){
+        $result = $this->participantModel()->getDetailedParticipantsByQuest($id);
+        return $this->standardResponse($result);
+    }
 
     public function create($data){ $this->methodNotAllowed(); }
 
