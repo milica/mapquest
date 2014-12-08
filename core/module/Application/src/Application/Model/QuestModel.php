@@ -11,11 +11,17 @@ class QuestModel extends ApplicationModel{
         $this->repository = $this->dm->getRepository('Application\Document\Quest');
     }
 
+    public function getQuestObject($id)
+    {
+        $quest = $this->repository->find($id);
+        return $quest;
+    }
+
+
     public function get($id)
     {
         $result = $this->standardResult();
-        $quest = $this->repository->find($id);
-        $result->message = $this->formatQuest($quest);
+        $result->message = $this->formatQuest($this->getQuestObject($id));
         return $result;
     }
 
@@ -46,8 +52,8 @@ class QuestModel extends ApplicationModel{
         if(!empty($data['map'])){$map = $data['map'];}else{return $this->logErrors('Missing Map');}
 
         $mapMdl = new MapModel($this->dm);
-        $map = $mapMdl->get($map);
-        if(empty($map->message)){return $this->logErrors('Not existing Map');}
+        $map = $mapMdl->getMapObject($map);
+        if(empty($map)){return $this->logErrors('Not existing Map');}
 
         $user = $this->getUser();
 
@@ -58,7 +64,7 @@ class QuestModel extends ApplicationModel{
         if(!$Quest->setStart($start)){return $this->logErrors('Wrong value for parameter StTime');}
         if(!$Quest->setFinish($finish)){return $this->logErrors('Wrong value for parameter  Finish Time');}
         if(!$Quest->setUser($user)){return $this->logErrors('Wrong value for parameter  User');}
-        if(!$Quest->setMap($map->message)){return $this->logErrors('Wrong value for parameter Map');}
+        if(!$Quest->setMap($map)){return $this->logErrors('Wrong value for parameter Map');}
 
         $this->dm->persist($Quest);
         $this->dm->flush();

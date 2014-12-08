@@ -11,6 +11,12 @@ class ParticipantModel extends ApplicationModel{
         $this->repository = $this->dm->getRepository('Application\Document\Participant');
     }
 
+    public function getParticipantObject($id)
+    {
+        $participant = $this->repository->find($id);
+        return $participant;
+    }
+
     public function get($id)
     {
 
@@ -26,7 +32,7 @@ class ParticipantModel extends ApplicationModel{
 
     }
 
-    public function update($data)
+    public function update($id, $data)
     {
 
     }
