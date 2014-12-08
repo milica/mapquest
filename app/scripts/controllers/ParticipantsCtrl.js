@@ -12,7 +12,7 @@ angular.module('mapQuestApp')
         User.getParticipants($routeParams.quest)
             .then(function(result) {
 
-                $scope.view.participants = result.list;
+                $scope.view.participants = result.data;
                 $scope.view.loading = false;
 
             });

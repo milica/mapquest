@@ -117,54 +117,14 @@ angular.module('mapQuestApp')
         };
 
         /**
-         * Get participant info for particular quest
+         * Get participants for particular quest
          *
          * @param questId
          * @returns {*}
          */
-        self.getParticipant = function(questId) {
+        self.getParticipants = function(questId) {
 
-            var userId = self.getSessionUser();
-
-            var deferred = $q.defer();
-
-            var participant = {
-                id: 1,
-                score: 1,
-                rank: 10,
-                path: [
-                    {
-                        id_area: 1,
-                        status: 0
-                    },
-                    {
-                        id_area: 2,
-                        status: 0
-                    },
-                    {
-                        id_area: 3,
-                        status: 0
-                    },
-                    {
-                        id_area: 4,
-                        status: 0
-                    },
-                    {
-                        id_area: 5,
-                        status: 0
-                    },
-                    {
-                        id_area: 6,
-                        status: 0
-                    }
-                ]
-            };
-
-            deferred.resolve({data: participant});
-
-            return deferred.promise;
-
-            //return Api.participants.get({quest_id: questId, user_id: userId}).$promise;
+            return Api.participants.get({id: questId}).$promise;
 
         };
 

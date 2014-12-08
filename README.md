@@ -5,7 +5,7 @@ you search for places around you conquer them!
 
 ## Description
 
-[![mapQuest](http://mapquest.kamilica.koding.io/images/logo.png?raw=true "mapQuest")](http://mapquest.kamilica.koding.io/)
+[![mapQuest](http://mapquest.kamilica.koding.io/images/logo-small.png "mapQuest")](http://mapquest.kamilica.koding.io/)
 
 This is simple game that promotes different kind of amusement compared to other games.
 Instead of sitting home for hours and playing on your computer or smartphone or whatever it is, you can go out and search
@@ -39,9 +39,10 @@ by playing this game and visit places that otherwise they would never think of.
 ## Technology stack
 
 - [AngularJS](https://angularjs.org/)
+- [SASS](http://sass-lang.com/)
 - [Zend Framework](http://framework.zend.com/)
 - [MongoDB](http://www.mongodb.org/)
-- [Doctrine](http://www.doctrine-project.org/)
+- [Doctrine ODM](http://www.doctrine-project.org/)
 - [Composer](https://getcomposer.org/)
 - [Bower](http://bower.io/)
 - [Grunt](http://gruntjs.com/)

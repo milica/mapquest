@@ -22,11 +22,11 @@ angular.module('mapQuestApp')
 
         self.questByMap = $resource(apiUrl + '/quests-by-map/:id', {id: '@id'});
 
-//        self.participants = $resource(apiUrl + '/participants', {quest_id: '@quest_id', user_id: '@user_id'}, {
+        self.participants = $resource(apiUrl + '/participant/:id', {id: '@id'}, {
 //            create: {method: 'POST'},
 //            update: {method: 'PUT'},
 //            remove: {method: 'DELETE'}
-//        });
+        });
 
         self.join = $resource(apiUrl + '/join', {}, {
             post: {method: 'POST'}

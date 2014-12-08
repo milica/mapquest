@@ -47,17 +47,15 @@ angular.module('mapQuestApp')
 
                 _.each(quest.areas, function(area) {
 
-                    console.log('path', quest.participant);
-                    var status = _.find(quest.participant.path, function(path, areaId) {
+                    var status = _.find(quest.participant, function(path, areaId) {
                         return areaId === area.id;
                     });
-                    console.log('status', status);
 
                     area.status = status;
                 });
+
             }
 
-            console.log(quest);
             quest.start = new Date(quest.start * 1000);
             quest.finish = new Date(quest.finish * 1000);
 
@@ -86,7 +84,7 @@ angular.module('mapQuestApp')
             User.join($routeParams.id)
                 .then(function() {
                     $scope.view.saving = false;
-                    //$route.reload();
+                    $route.reload();
                 });
 
         };

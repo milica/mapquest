@@ -37,14 +37,14 @@
             <div ng-if="view.quest.participant" class="info-row">
                 <div class="label">Score</div>
                 <div class="info">
-                    <span class="score">{{ view.quest.participant.score }}</span>
+                    <span class="score">{{ view.quest.participant_data.score }}</span>
                 </div>
             </div>
 
             <div ng-if="view.quest.participant" class="info-row">
                 <div class="label">Rank</div>
                 <div class="info">
-                    <span class="rank">{{ view.quest.participant.rank }}</span>
+                    <span class="rank">{{ view.quest.participant_data.rank }}</span>
                 </div>
             </div>
 
@@ -58,7 +58,7 @@
             <div class="info-row">
                 <div class="label">Participants</div>
                 <div class="info">
-                    <a ng-href="#/participants/:view.quest.id" class="btn block white">{{ view.quest.participants }} <i class="fa fa-chevron-right to-right"></i></a>
+                    <a ng-href="#/participants/{{ view.quest.id }}" class="btn block white">{{ view.quest.participants }} <i class="fa fa-chevron-right to-right"></i></a>
                 </div>
             </div>
 
