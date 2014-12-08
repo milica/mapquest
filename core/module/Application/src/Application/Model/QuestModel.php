@@ -109,9 +109,9 @@ class QuestModel extends ApplicationModel{
         $start      = $quest_o->getStart();
         $finish     = $quest_o->getFinish();
 
-        if(time() > $start){
+        if($start > time()){
             $status = 'pending';
-        }elseif($start > time() && time() < $finish){
+        }elseif($start < time() && time() < $finish){
             $status = 'running';
         }elseif(time() > $finish){
             $status = 'finished';
