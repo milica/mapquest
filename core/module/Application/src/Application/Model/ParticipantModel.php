@@ -74,6 +74,7 @@ class ParticipantModel extends ApplicationModel{
     public function update($id, $data)
     {
 
+
     }
 
     public function delete($quest_id)

@@ -53,7 +53,17 @@ class PathModel extends ApplicationModel{
 
     public function update($id, $data)
     {
+        $result = $this->standardResult();
+        $user = $this->getUser();
 
+        $path_o = $this->repository->findOneBy(array('participant.id' => $user->getId(), 'area.id' => $id));
+        $path_o->setStatus(true);
+        $this->dm->persist($path_o);
+        $this->dm->flush();
+
+        $result->message = 'Success';
+
+        return $result;
     }
 
     public function delete($id)
