@@ -38,7 +38,7 @@ class ParticipantModel extends ApplicationModel{
         if(!empty($data['quest'])){$quest = $data['quest'];}else{return $this->logErrors('Missing Quest ID');}
 
         $existing = $this->isParticipant($quest);
-        if($existing){return $this->logErrors('User already joined');}
+        if(!empty($existing)){return $this->logErrors('User already joined');}
 
         $questMdl = new QuestModel($this->dm);
         $quest = $questMdl->getQuestObject($quest);
