@@ -36,15 +36,17 @@ class ParticipantModel extends ApplicationModel{
         $result = $this->standardResult();
 
         if(!empty($data['quest'])){$quest = $data['quest'];}else{return $this->logErrors('Missing Quest ID');}
+        $user = $this->getUser();
 
-        $existing = $this->isParticipant($quest);
-        if(!empty($existing)){return $this->logErrors('User already joined');}
+        $participant = $this->repository->findBy(array('quest.id' => $quest, 'user.id' => $user->getId()));
+
+        if(!empty($participant)){return $this->logErrors('User already joined');}
 
         $questMdl = new QuestModel($this->dm);
         $quest = $questMdl->getQuestObject($quest);
         if(empty($quest)){return $this->logErrors('Not existing Quest');}
 
-        $user = $this->getUser();
+
 
         $Participant = new Participant();
         $Participant->setUser($user);
@@ -65,7 +67,7 @@ class ParticipantModel extends ApplicationModel{
         $PathMdl = new PathModel($this->dm);
         $QuestMdl = new QuestModel($this->dm);
         $quest = $QuestMdl->get($quest_o->getId());
-        foreach($quest->message->area as $area)
+        foreach($quest->message->areas as $area)
         {
             $PathMdl->create(array('area' => $area->id));
         }
@@ -124,13 +126,14 @@ class ParticipantModel extends ApplicationModel{
 
         $user       = $this->getUser();
         $user_id    = $user->getId();
-        $participant = $this->repository->findOneBy(array('quest.id' => $quest_id, 'user.id' => $user_id));
 
-        if(empty($participant)){
-            return null;
-        }else{
+        $participant = $this->repository->findBy(array('quest.id' => $quest_id, 'user.id' => $user_id));
+
+        if(count($participant) == 0){
             return $PathMdl->getPathsByQuest($quest_id);
         }
+
+        return false;
     }
 
     private function formatParticipants($participants, $details = false)
