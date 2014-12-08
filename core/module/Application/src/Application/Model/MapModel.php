@@ -95,12 +95,15 @@ class MapModel extends ApplicationModel{
     {
         $map = new \stdClass();
 
+        $AreaMdl = new AreaModel($this->dm);
+
         $map->id        = $map_o->getId();
         $map->title     = $map_o->getTitle();
-        $map->user      = $map_o->getUser()->getUsername();
+        $map->areas     = $AreaMdl->formatAreas($AreaMdl->getAreasByMap($map_o));
 
         if($details){
-            $map->user_id     = $map_o->getUser()->getId();
+            $map->user_id       = $map_o->getUser()->getId();
+            $map->user          = $map_o->getUser()->getUsername();
         }
         return $map;
     }
